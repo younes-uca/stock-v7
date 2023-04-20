@@ -13,10 +13,10 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {PaiementLivraisonService} from 'src/app/controller/service/PaiementLivraison.service';
 import {PaiementLivraisonDto} from 'src/app/controller/model/PaiementLivraison.model';
 import {PaiementLivraisonCriteria} from 'src/app/controller/criteria/PaiementLivraisonCriteria.model';
-import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
-import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
 import {LivraisonDto} from 'src/app/controller/model/Livraison.model';
 import {LivraisonService} from 'src/app/controller/service/Livraison.service';
+import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
+import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
 import {VenteDto} from 'src/app/controller/model/Vente.model';
 import {VenteService} from 'src/app/controller/service/Vente.service';
 @Component({
@@ -35,7 +35,7 @@ export class PaiementLivraisonCreateAdminComponent extends AbstractCreateControl
     constructor(private datePipe: DatePipe, private paiementLivraisonService: PaiementLivraisonService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private modePaiementService: ModePaiementService, private livraisonService: LivraisonService, private venteService: VenteService
+, private livraisonService: LivraisonService, private modePaiementService: ModePaiementService, private venteService: VenteService
     ) {
         super(datePipe, paiementLivraisonService, messageService, confirmationService, roleService, router, stringUtilService);
     }

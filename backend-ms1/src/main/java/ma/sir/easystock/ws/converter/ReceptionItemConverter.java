@@ -19,9 +19,9 @@ public class ReceptionItemConverter extends AbstractConverter<ReceptionItem, Rec
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
-    private MagasinConverter magasinConverter ;
-    @Autowired
     private ReceptionConverter receptionConverter ;
+    @Autowired
+    private MagasinConverter magasinConverter ;
     private boolean produit;
     private boolean magasin;
     private boolean reception;
@@ -98,17 +98,17 @@ public class ReceptionItemConverter extends AbstractConverter<ReceptionItem, Rec
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
     }
-    public MagasinConverter getMagasinConverter(){
-        return this.magasinConverter;
-    }
-    public void setMagasinConverter(MagasinConverter magasinConverter ){
-        this.magasinConverter = magasinConverter;
-    }
     public ReceptionConverter getReceptionConverter(){
         return this.receptionConverter;
     }
     public void setReceptionConverter(ReceptionConverter receptionConverter ){
         this.receptionConverter = receptionConverter;
+    }
+    public MagasinConverter getMagasinConverter(){
+        return this.magasinConverter;
+    }
+    public void setMagasinConverter(MagasinConverter magasinConverter ){
+        this.magasinConverter = magasinConverter;
     }
     public boolean  isProduit(){
         return this.produit;

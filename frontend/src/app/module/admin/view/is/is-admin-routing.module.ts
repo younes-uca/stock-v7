@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/controller/guards/auth.guard';
 
 import { ComptableTraitantListAdminComponent } from './comptable-traitant-admin/list-admin/comptable-traitant-list-admin.component';
 import { ComptableValidateurListAdminComponent } from './comptable-validateur-admin/list-admin/comptable-validateur-list-admin.component';
+import { TauxIsListAdminComponent } from './taux-is-admin/list-admin/taux-is-list-admin.component';
 import { DeclarationIsListAdminComponent } from './declaration-is-admin/list-admin/declaration-is-list-admin.component';
 @NgModule({
     imports: [
@@ -38,6 +39,18 @@ import { DeclarationIsListAdminComponent } from './declaration-is-admin/list-adm
                                 {
                                     path: 'list',
                                     component: ComptableValidateurListAdminComponent ,
+                                    canActivate: [AuthGuard]
+                                }
+                            ]
+                        },
+
+                        {
+
+                            path: 'taux-is',
+                            children: [
+                                {
+                                    path: 'list',
+                                    component: TauxIsListAdminComponent ,
                                     canActivate: [AuthGuard]
                                 }
                             ]

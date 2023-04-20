@@ -17,17 +17,17 @@ import ma.sir.easystock.ws.dto.VenteDto;
 public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHistory> {
 
     @Autowired
+    private PaiementVenteConverter paiementVenteConverter ;
+    @Autowired
     private VenteItemConverter venteItemConverter ;
     @Autowired
-    private ClientConverter clientConverter ;
+    private StoreConverter storeConverter ;
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
     private ModePaiementConverter modePaiementConverter ;
     @Autowired
-    private PaiementVenteConverter paiementVenteConverter ;
-    @Autowired
-    private StoreConverter storeConverter ;
+    private ClientConverter clientConverter ;
     private boolean store;
     private boolean client;
     private boolean paiementVentes;
@@ -129,17 +129,23 @@ public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHist
     }
 
 
+    public PaiementVenteConverter getPaiementVenteConverter(){
+        return this.paiementVenteConverter;
+    }
+    public void setPaiementVenteConverter(PaiementVenteConverter paiementVenteConverter ){
+        this.paiementVenteConverter = paiementVenteConverter;
+    }
     public VenteItemConverter getVenteItemConverter(){
         return this.venteItemConverter;
     }
     public void setVenteItemConverter(VenteItemConverter venteItemConverter ){
         this.venteItemConverter = venteItemConverter;
     }
-    public ClientConverter getClientConverter(){
-        return this.clientConverter;
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
     }
-    public void setClientConverter(ClientConverter clientConverter ){
-        this.clientConverter = clientConverter;
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
     }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
@@ -153,17 +159,11 @@ public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHist
     public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
         this.modePaiementConverter = modePaiementConverter;
     }
-    public PaiementVenteConverter getPaiementVenteConverter(){
-        return this.paiementVenteConverter;
+    public ClientConverter getClientConverter(){
+        return this.clientConverter;
     }
-    public void setPaiementVenteConverter(PaiementVenteConverter paiementVenteConverter ){
-        this.paiementVenteConverter = paiementVenteConverter;
-    }
-    public StoreConverter getStoreConverter(){
-        return this.storeConverter;
-    }
-    public void setStoreConverter(StoreConverter storeConverter ){
-        this.storeConverter = storeConverter;
+    public void setClientConverter(ClientConverter clientConverter ){
+        this.clientConverter = clientConverter;
     }
     public boolean  isStore(){
         return this.store;

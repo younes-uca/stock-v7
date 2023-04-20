@@ -21,10 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
 import ma.sir.easystock.bean.core.PaiementVente;
 import ma.sir.easystock.bean.core.VenteItem;
 
-import ma.sir.easystock.service.facade.admin.VenteItemAdminService ;
 import ma.sir.easystock.service.facade.admin.PaiementVenteAdminService ;
-import ma.sir.easystock.service.facade.admin.ClientAdminService ;
+import ma.sir.easystock.service.facade.admin.VenteItemAdminService ;
 import ma.sir.easystock.service.facade.admin.StoreAdminService ;
+import ma.sir.easystock.service.facade.admin.ClientAdminService ;
 
 
 import java.util.List;
@@ -100,13 +100,13 @@ VenteHistoryDao> implements VenteAdminService {
     }
 
     @Autowired
-    private VenteItemAdminService venteItemService ;
-    @Autowired
     private PaiementVenteAdminService paiementVenteService ;
     @Autowired
-    private ClientAdminService clientService ;
+    private VenteItemAdminService venteItemService ;
     @Autowired
     private StoreAdminService storeService ;
+    @Autowired
+    private ClientAdminService clientService ;
     public VenteAdminServiceImpl(VenteDao dao, VenteHistoryDao historyDao) {
         super(dao, historyDao);
     }

@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ma.sir.easystock.bean.core.DevisItemFournisseur;
 
-import ma.sir.easystock.service.facade.admin.DevisItemFournisseurAdminService ;
 import ma.sir.easystock.service.facade.admin.FournisseurAdminService ;
+import ma.sir.easystock.service.facade.admin.DevisItemFournisseurAdminService ;
 
 
 import java.util.List;
@@ -79,9 +79,9 @@ DevisFournisseurHistoryDao> implements DevisFournisseurAdminService {
     }
 
     @Autowired
-    private DevisItemFournisseurAdminService devisItemFournisseurService ;
-    @Autowired
     private FournisseurAdminService fournisseurService ;
+    @Autowired
+    private DevisItemFournisseurAdminService devisItemFournisseurService ;
     public DevisFournisseurAdminServiceImpl(DevisFournisseurDao dao, DevisFournisseurHistoryDao historyDao) {
         super(dao, historyDao);
     }

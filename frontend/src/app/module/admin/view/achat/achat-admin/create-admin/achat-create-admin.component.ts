@@ -13,22 +13,22 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {AchatService} from 'src/app/controller/service/Achat.service';
 import {AchatDto} from 'src/app/controller/model/Achat.model';
 import {AchatCriteria} from 'src/app/controller/criteria/AchatCriteria.model';
-import {AvoirAchatDto} from 'src/app/controller/model/AvoirAchat.model';
-import {AvoirAchatService} from 'src/app/controller/service/AvoirAchat.service';
-import {AchatItemDto} from 'src/app/controller/model/AchatItem.model';
-import {AchatItemService} from 'src/app/controller/service/AchatItem.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
-import {AvoirAchatItemDto} from 'src/app/controller/model/AvoirAchatItem.model';
-import {AvoirAchatItemService} from 'src/app/controller/service/AvoirAchatItem.service';
-import {PaiementAchatDto} from 'src/app/controller/model/PaiementAchat.model';
-import {PaiementAchatService} from 'src/app/controller/service/PaiementAchat.service';
-import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
-import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
 import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
 import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
+import {PaiementAchatDto} from 'src/app/controller/model/PaiementAchat.model';
+import {PaiementAchatService} from 'src/app/controller/service/PaiementAchat.service';
+import {AchatItemDto} from 'src/app/controller/model/AchatItem.model';
+import {AchatItemService} from 'src/app/controller/service/AchatItem.service';
 import {StoreDto} from 'src/app/controller/model/Store.model';
 import {StoreService} from 'src/app/controller/service/Store.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
+import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
+import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
+import {AvoirAchatItemDto} from 'src/app/controller/model/AvoirAchatItem.model';
+import {AvoirAchatItemService} from 'src/app/controller/service/AvoirAchatItem.service';
+import {AvoirAchatDto} from 'src/app/controller/model/AvoirAchat.model';
+import {AvoirAchatService} from 'src/app/controller/service/AvoirAchat.service';
 @Component({
   selector: 'app-achat-create-admin',
   templateUrl: './achat-create-admin.component.html'
@@ -50,7 +50,7 @@ export class AchatCreateAdminComponent extends AbstractCreateController<AchatDto
     constructor(private datePipe: DatePipe, private achatService: AchatService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private paiementAchatService: PaiementAchatService, private modePaiementService: ModePaiementService, private avoirAchatService: AvoirAchatService, private achatItemService: AchatItemService, private produitService: ProduitService, private fournisseurService: FournisseurService, private storeService: StoreService
+, private produitService: ProduitService, private modePaiementService: ModePaiementService, private fournisseurService: FournisseurService, private paiementAchatService: PaiementAchatService, private achatItemService: AchatItemService, private avoirAchatService: AvoirAchatService, private storeService: StoreService
     ) {
         super(datePipe, achatService, messageService, confirmationService, roleService, router, stringUtilService);
     }

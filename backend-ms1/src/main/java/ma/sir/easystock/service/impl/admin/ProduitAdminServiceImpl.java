@@ -20,9 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ma.sir.easystock.bean.core.StockProduit;
 
+import ma.sir.easystock.service.facade.admin.CategorieProduitAdminService ;
 import ma.sir.easystock.service.facade.admin.StockProduitAdminService ;
 import ma.sir.easystock.service.facade.admin.StoreAdminService ;
-import ma.sir.easystock.service.facade.admin.CategorieProduitAdminService ;
 import ma.sir.easystock.service.facade.admin.MarqueAdminService ;
 import ma.sir.easystock.service.facade.admin.UniteMesureAdminService ;
 
@@ -100,11 +100,11 @@ ProduitHistoryDao> implements ProduitAdminService {
     }
 
     @Autowired
+    private CategorieProduitAdminService categorieProduitService ;
+    @Autowired
     private StockProduitAdminService stockProduitService ;
     @Autowired
     private StoreAdminService storeService ;
-    @Autowired
-    private CategorieProduitAdminService categorieProduitService ;
     @Autowired
     private MarqueAdminService marqueService ;
     @Autowired

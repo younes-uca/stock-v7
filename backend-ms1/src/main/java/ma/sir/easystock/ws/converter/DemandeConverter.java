@@ -19,23 +19,23 @@ import ma.sir.easystock.ws.dto.DemandeDto;
 public class DemandeConverter extends AbstractConverter<Demande, DemandeDto, DemandeHistory> {
 
     @Autowired
-    private DemandeItemConverter demandeItemConverter ;
-    @Autowired
     private EtatDemandeConverter etatDemandeConverter ;
-    @Autowired
-    private ProduitConverter produitConverter ;
-    @Autowired
-    private ClientConverter clientConverter ;
-    @Autowired
-    private LivraisonConverter livraisonConverter ;
-    @Autowired
-    private MagasinConverter magasinConverter ;
-    @Autowired
-    private ModePaiementConverter modePaiementConverter ;
     @Autowired
     private PaiementDemandeConverter paiementDemandeConverter ;
     @Autowired
+    private DemandeItemConverter demandeItemConverter ;
+    @Autowired
     private StoreConverter storeConverter ;
+    @Autowired
+    private MagasinConverter magasinConverter ;
+    @Autowired
+    private ProduitConverter produitConverter ;
+    @Autowired
+    private LivraisonConverter livraisonConverter ;
+    @Autowired
+    private ModePaiementConverter modePaiementConverter ;
+    @Autowired
+    private ClientConverter clientConverter ;
     private boolean produit;
     private boolean client;
     private boolean livraison;
@@ -155,47 +155,11 @@ public class DemandeConverter extends AbstractConverter<Demande, DemandeDto, Dem
     }
 
 
-    public DemandeItemConverter getDemandeItemConverter(){
-        return this.demandeItemConverter;
-    }
-    public void setDemandeItemConverter(DemandeItemConverter demandeItemConverter ){
-        this.demandeItemConverter = demandeItemConverter;
-    }
     public EtatDemandeConverter getEtatDemandeConverter(){
         return this.etatDemandeConverter;
     }
     public void setEtatDemandeConverter(EtatDemandeConverter etatDemandeConverter ){
         this.etatDemandeConverter = etatDemandeConverter;
-    }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
-    }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
-    }
-    public ClientConverter getClientConverter(){
-        return this.clientConverter;
-    }
-    public void setClientConverter(ClientConverter clientConverter ){
-        this.clientConverter = clientConverter;
-    }
-    public LivraisonConverter getLivraisonConverter(){
-        return this.livraisonConverter;
-    }
-    public void setLivraisonConverter(LivraisonConverter livraisonConverter ){
-        this.livraisonConverter = livraisonConverter;
-    }
-    public MagasinConverter getMagasinConverter(){
-        return this.magasinConverter;
-    }
-    public void setMagasinConverter(MagasinConverter magasinConverter ){
-        this.magasinConverter = magasinConverter;
-    }
-    public ModePaiementConverter getModePaiementConverter(){
-        return this.modePaiementConverter;
-    }
-    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
-        this.modePaiementConverter = modePaiementConverter;
     }
     public PaiementDemandeConverter getPaiementDemandeConverter(){
         return this.paiementDemandeConverter;
@@ -203,11 +167,47 @@ public class DemandeConverter extends AbstractConverter<Demande, DemandeDto, Dem
     public void setPaiementDemandeConverter(PaiementDemandeConverter paiementDemandeConverter ){
         this.paiementDemandeConverter = paiementDemandeConverter;
     }
+    public DemandeItemConverter getDemandeItemConverter(){
+        return this.demandeItemConverter;
+    }
+    public void setDemandeItemConverter(DemandeItemConverter demandeItemConverter ){
+        this.demandeItemConverter = demandeItemConverter;
+    }
     public StoreConverter getStoreConverter(){
         return this.storeConverter;
     }
     public void setStoreConverter(StoreConverter storeConverter ){
         this.storeConverter = storeConverter;
+    }
+    public MagasinConverter getMagasinConverter(){
+        return this.magasinConverter;
+    }
+    public void setMagasinConverter(MagasinConverter magasinConverter ){
+        this.magasinConverter = magasinConverter;
+    }
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
+    }
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
+    }
+    public LivraisonConverter getLivraisonConverter(){
+        return this.livraisonConverter;
+    }
+    public void setLivraisonConverter(LivraisonConverter livraisonConverter ){
+        this.livraisonConverter = livraisonConverter;
+    }
+    public ModePaiementConverter getModePaiementConverter(){
+        return this.modePaiementConverter;
+    }
+    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
+        this.modePaiementConverter = modePaiementConverter;
+    }
+    public ClientConverter getClientConverter(){
+        return this.clientConverter;
+    }
+    public void setClientConverter(ClientConverter clientConverter ){
+        this.clientConverter = clientConverter;
     }
     public boolean  isProduit(){
         return this.produit;

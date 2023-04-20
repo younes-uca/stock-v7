@@ -17,21 +17,21 @@ import ma.sir.easystock.ws.dto.AchatDto;
 public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHistory> {
 
     @Autowired
-    private AvoirAchatConverter avoirAchatConverter ;
-    @Autowired
-    private AchatItemConverter achatItemConverter ;
-    @Autowired
-    private ProduitConverter produitConverter ;
-    @Autowired
-    private AvoirAchatItemConverter avoirAchatItemConverter ;
+    private FournisseurConverter fournisseurConverter ;
     @Autowired
     private PaiementAchatConverter paiementAchatConverter ;
     @Autowired
-    private ModePaiementConverter modePaiementConverter ;
-    @Autowired
-    private FournisseurConverter fournisseurConverter ;
+    private AchatItemConverter achatItemConverter ;
     @Autowired
     private StoreConverter storeConverter ;
+    @Autowired
+    private ProduitConverter produitConverter ;
+    @Autowired
+    private ModePaiementConverter modePaiementConverter ;
+    @Autowired
+    private AvoirAchatItemConverter avoirAchatItemConverter ;
+    @Autowired
+    private AvoirAchatConverter avoirAchatConverter ;
     private boolean fournisseur;
     private boolean store;
     private boolean paiementAchats;
@@ -144,29 +144,11 @@ public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHist
     }
 
 
-    public AvoirAchatConverter getAvoirAchatConverter(){
-        return this.avoirAchatConverter;
+    public FournisseurConverter getFournisseurConverter(){
+        return this.fournisseurConverter;
     }
-    public void setAvoirAchatConverter(AvoirAchatConverter avoirAchatConverter ){
-        this.avoirAchatConverter = avoirAchatConverter;
-    }
-    public AchatItemConverter getAchatItemConverter(){
-        return this.achatItemConverter;
-    }
-    public void setAchatItemConverter(AchatItemConverter achatItemConverter ){
-        this.achatItemConverter = achatItemConverter;
-    }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
-    }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
-    }
-    public AvoirAchatItemConverter getAvoirAchatItemConverter(){
-        return this.avoirAchatItemConverter;
-    }
-    public void setAvoirAchatItemConverter(AvoirAchatItemConverter avoirAchatItemConverter ){
-        this.avoirAchatItemConverter = avoirAchatItemConverter;
+    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
+        this.fournisseurConverter = fournisseurConverter;
     }
     public PaiementAchatConverter getPaiementAchatConverter(){
         return this.paiementAchatConverter;
@@ -174,23 +156,41 @@ public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHist
     public void setPaiementAchatConverter(PaiementAchatConverter paiementAchatConverter ){
         this.paiementAchatConverter = paiementAchatConverter;
     }
-    public ModePaiementConverter getModePaiementConverter(){
-        return this.modePaiementConverter;
+    public AchatItemConverter getAchatItemConverter(){
+        return this.achatItemConverter;
     }
-    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
-        this.modePaiementConverter = modePaiementConverter;
-    }
-    public FournisseurConverter getFournisseurConverter(){
-        return this.fournisseurConverter;
-    }
-    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
-        this.fournisseurConverter = fournisseurConverter;
+    public void setAchatItemConverter(AchatItemConverter achatItemConverter ){
+        this.achatItemConverter = achatItemConverter;
     }
     public StoreConverter getStoreConverter(){
         return this.storeConverter;
     }
     public void setStoreConverter(StoreConverter storeConverter ){
         this.storeConverter = storeConverter;
+    }
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
+    }
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
+    }
+    public ModePaiementConverter getModePaiementConverter(){
+        return this.modePaiementConverter;
+    }
+    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
+        this.modePaiementConverter = modePaiementConverter;
+    }
+    public AvoirAchatItemConverter getAvoirAchatItemConverter(){
+        return this.avoirAchatItemConverter;
+    }
+    public void setAvoirAchatItemConverter(AvoirAchatItemConverter avoirAchatItemConverter ){
+        this.avoirAchatItemConverter = avoirAchatItemConverter;
+    }
+    public AvoirAchatConverter getAvoirAchatConverter(){
+        return this.avoirAchatConverter;
+    }
+    public void setAvoirAchatConverter(AvoirAchatConverter avoirAchatConverter ){
+        this.avoirAchatConverter = avoirAchatConverter;
     }
     public boolean  isFournisseur(){
         return this.fournisseur;

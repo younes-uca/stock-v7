@@ -16,9 +16,9 @@ import ma.sir.easystock.ws.dto.PaiementAchatDto;
 public class PaiementAchatConverter extends AbstractConverter<PaiementAchat, PaiementAchatDto, PaiementAchatHistory> {
 
     @Autowired
-    private AchatConverter achatConverter ;
-    @Autowired
     private ModePaiementConverter modePaiementConverter ;
+    @Autowired
+    private AchatConverter achatConverter ;
     private boolean achat;
     private boolean modePaiement;
 
@@ -91,17 +91,17 @@ public class PaiementAchatConverter extends AbstractConverter<PaiementAchat, Pai
     }
 
 
-    public AchatConverter getAchatConverter(){
-        return this.achatConverter;
-    }
-    public void setAchatConverter(AchatConverter achatConverter ){
-        this.achatConverter = achatConverter;
-    }
     public ModePaiementConverter getModePaiementConverter(){
         return this.modePaiementConverter;
     }
     public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
         this.modePaiementConverter = modePaiementConverter;
+    }
+    public AchatConverter getAchatConverter(){
+        return this.achatConverter;
+    }
+    public void setAchatConverter(AchatConverter achatConverter ){
+        this.achatConverter = achatConverter;
     }
     public boolean  isAchat(){
         return this.achat;

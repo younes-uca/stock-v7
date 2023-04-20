@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.DemandeItemDto;
 public class DemandeItemConverter extends AbstractConverter<DemandeItem, DemandeItemDto, DemandeItemHistory> {
 
     @Autowired
-    private DemandeConverter demandeConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
+    @Autowired
+    private DemandeConverter demandeConverter ;
     private boolean produit;
     private boolean demande;
 
@@ -86,17 +86,17 @@ public class DemandeItemConverter extends AbstractConverter<DemandeItem, Demande
     }
 
 
-    public DemandeConverter getDemandeConverter(){
-        return this.demandeConverter;
-    }
-    public void setDemandeConverter(DemandeConverter demandeConverter ){
-        this.demandeConverter = demandeConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
+    }
+    public DemandeConverter getDemandeConverter(){
+        return this.demandeConverter;
+    }
+    public void setDemandeConverter(DemandeConverter demandeConverter ){
+        this.demandeConverter = demandeConverter;
     }
     public boolean  isProduit(){
         return this.produit;

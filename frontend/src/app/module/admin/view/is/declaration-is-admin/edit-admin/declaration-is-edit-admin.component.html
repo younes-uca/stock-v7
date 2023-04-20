@@ -68,6 +68,10 @@
                                             </p-dropdown>
                                             
                                         </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateTauxIs('TauxIs')" class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
 
                                         <div class="field col-12 md:col-3">
                                             <label for="9">{{'declarationIsMontantImpot' | translate}}}</label>
@@ -125,6 +129,7 @@
                 </div>
             </ng-template>
 
+                    <app-taux-is-create-admin></app-taux-is-create-admin>
                     <app-comptable-traitant-create-admin></app-comptable-traitant-create-admin>
                     <app-comptable-validateur-create-admin></app-comptable-validateur-create-admin>
 

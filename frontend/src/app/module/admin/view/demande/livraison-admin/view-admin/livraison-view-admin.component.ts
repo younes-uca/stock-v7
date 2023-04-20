@@ -13,16 +13,16 @@ import {LivraisonService} from 'src/app/controller/service/Livraison.service';
 import {LivraisonDto} from 'src/app/controller/model/Livraison.model';
 import {LivraisonCriteria} from 'src/app/controller/criteria/LivraisonCriteria.model';
 
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {LivraisonItemDto} from 'src/app/controller/model/LivraisonItem.model';
 import {LivraisonItemService} from 'src/app/controller/service/LivraisonItem.service';
 import {DemandeDto} from 'src/app/controller/model/Demande.model';
 import {DemandeService} from 'src/app/controller/service/Demande.service';
-import {EtatLivraisonDto} from 'src/app/controller/model/EtatLivraison.model';
-import {EtatLivraisonService} from 'src/app/controller/service/EtatLivraison.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {ClientDto} from 'src/app/controller/model/Client.model';
 import {ClientService} from 'src/app/controller/service/Client.service';
+import {EtatLivraisonDto} from 'src/app/controller/model/EtatLivraison.model';
+import {EtatLivraisonService} from 'src/app/controller/service/EtatLivraison.service';
 @Component({
   selector: 'app-livraison-view-admin',
   templateUrl: './livraison-view-admin.component.html'
@@ -35,7 +35,7 @@ export class LivraisonViewAdminComponent extends AbstractViewController<Livraiso
     constructor(private datePipe: DatePipe, private livraisonService: LivraisonService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private livraisonItemService: LivraisonItemService, private demandeService: DemandeService, private etatLivraisonService: EtatLivraisonService, private produitService: ProduitService, private clientService: ClientService
+, private produitService: ProduitService, private livraisonItemService: LivraisonItemService, private demandeService: DemandeService, private clientService: ClientService, private etatLivraisonService: EtatLivraisonService
     ){
         super(datePipe, livraisonService, messageService, roleService, router, stringUtilService);
     }

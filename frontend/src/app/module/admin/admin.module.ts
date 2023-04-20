@@ -24,6 +24,8 @@ import { ReferentielAdminModule } from './view/referentiel/referentiel-admin.mod
 import { ReferentielAdminRoutingModule } from './view/referentiel/referentiel-admin-routing.module';
 import { BilanAdminModule } from './view/bilan/bilan-admin.module';
 import { BilanAdminRoutingModule } from './view/bilan/bilan-admin-routing.module';
+import { ChequeAdminModule } from './view/cheque/cheque-admin.module';
+import { ChequeAdminRoutingModule } from './view/cheque/cheque-admin-routing.module';
 import { AbonneAdminModule } from './view/abonne/abonne-admin.module';
 import { AbonneAdminRoutingModule } from './view/abonne/abonne-admin-routing.module';
 import { IsAdminModule } from './view/is/is-admin.module';
@@ -32,8 +34,8 @@ import { AchatAdminModule } from './view/achat/achat-admin.module';
 import { AchatAdminRoutingModule } from './view/achat/achat-admin-routing.module';
 import { CollaborateurAdminModule } from './view/collaborateur/collaborateur-admin.module';
 import { CollaborateurAdminRoutingModule } from './view/collaborateur/collaborateur-admin-routing.module';
-import { StockAdminModule } from './view/stock/stock-admin.module';
-import { StockAdminRoutingModule } from './view/stock/stock-admin-routing.module';
+import { DevisAdminModule } from './view/devis/devis-admin.module';
+import { DevisAdminRoutingModule } from './view/devis/devis-admin-routing.module';
 import { CommandeAdminModule } from './view/commande/commande-admin.module';
 import { CommandeAdminRoutingModule } from './view/commande/commande-admin-routing.module';
 import { DemandeAdminModule } from './view/demande/demande-admin.module';
@@ -90,6 +92,8 @@ import {MessagesModule} from 'primeng/messages';
   ReferentielAdminRoutingModule,
   BilanAdminModule,
   BilanAdminRoutingModule,
+  ChequeAdminModule,
+  ChequeAdminRoutingModule,
   AbonneAdminModule,
   AbonneAdminRoutingModule,
   IsAdminModule,
@@ -98,8 +102,8 @@ import {MessagesModule} from 'primeng/messages';
   AchatAdminRoutingModule,
   CollaborateurAdminModule,
   CollaborateurAdminRoutingModule,
-  StockAdminModule,
-  StockAdminRoutingModule,
+  DevisAdminModule,
+  DevisAdminRoutingModule,
   CommandeAdminModule,
   CommandeAdminRoutingModule,
   DemandeAdminModule,
@@ -114,11 +118,12 @@ import {MessagesModule} from 'primeng/messages';
     VenteAdminModule,
     ReferentielAdminModule,
     BilanAdminModule,
+    ChequeAdminModule,
     AbonneAdminModule,
     IsAdminModule,
     AchatAdminModule,
     CollaborateurAdminModule,
-    StockAdminModule,
+    DevisAdminModule,
     CommandeAdminModule,
     DemandeAdminModule,
     TvaAdminModule,

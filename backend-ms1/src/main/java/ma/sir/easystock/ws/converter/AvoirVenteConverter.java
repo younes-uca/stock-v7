@@ -19,9 +19,9 @@ public class AvoirVenteConverter extends AbstractConverter<AvoirVente, AvoirVent
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
-    private VenteConverter venteConverter ;
-    @Autowired
     private AvoirVenteItemConverter avoirVenteItemConverter ;
+    @Autowired
+    private VenteConverter venteConverter ;
     private boolean vente;
     private boolean avoirVenteItems;
 
@@ -98,17 +98,17 @@ public class AvoirVenteConverter extends AbstractConverter<AvoirVente, AvoirVent
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
     }
-    public VenteConverter getVenteConverter(){
-        return this.venteConverter;
-    }
-    public void setVenteConverter(VenteConverter venteConverter ){
-        this.venteConverter = venteConverter;
-    }
     public AvoirVenteItemConverter getAvoirVenteItemConverter(){
         return this.avoirVenteItemConverter;
     }
     public void setAvoirVenteItemConverter(AvoirVenteItemConverter avoirVenteItemConverter ){
         this.avoirVenteItemConverter = avoirVenteItemConverter;
+    }
+    public VenteConverter getVenteConverter(){
+        return this.venteConverter;
+    }
+    public void setVenteConverter(VenteConverter venteConverter ){
+        this.venteConverter = venteConverter;
     }
     public boolean  isVente(){
         return this.vente;

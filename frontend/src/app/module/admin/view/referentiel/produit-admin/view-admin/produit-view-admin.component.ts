@@ -13,12 +13,12 @@ import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitCriteria} from 'src/app/controller/criteria/ProduitCriteria.model';
 
+import {CategorieProduitDto} from 'src/app/controller/model/CategorieProduit.model';
+import {CategorieProduitService} from 'src/app/controller/service/CategorieProduit.service';
 import {StockProduitDto} from 'src/app/controller/model/StockProduit.model';
 import {StockProduitService} from 'src/app/controller/service/StockProduit.service';
 import {StoreDto} from 'src/app/controller/model/Store.model';
 import {StoreService} from 'src/app/controller/service/Store.service';
-import {CategorieProduitDto} from 'src/app/controller/model/CategorieProduit.model';
-import {CategorieProduitService} from 'src/app/controller/service/CategorieProduit.service';
 import {MarqueDto} from 'src/app/controller/model/Marque.model';
 import {MarqueService} from 'src/app/controller/service/Marque.service';
 import {UniteMesureDto} from 'src/app/controller/model/UniteMesure.model';
@@ -37,7 +37,7 @@ export class ProduitViewAdminComponent extends AbstractViewController<ProduitDto
     constructor(private datePipe: DatePipe, private produitService: ProduitService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private stockProduitService: StockProduitService, private storeService: StoreService, private categorieProduitService: CategorieProduitService, private marqueService: MarqueService, private uniteMesureService: UniteMesureService, private magasinService: MagasinService
+, private categorieProduitService: CategorieProduitService, private stockProduitService: StockProduitService, private storeService: StoreService, private marqueService: MarqueService, private uniteMesureService: UniteMesureService, private magasinService: MagasinService
     ){
         super(datePipe, produitService, messageService, roleService, router, stringUtilService);
     }

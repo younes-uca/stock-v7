@@ -26,6 +26,10 @@ import { ComptableValidateurCreateAdminComponent } from './comptable-validateur-
 import { ComptableValidateurEditAdminComponent } from './comptable-validateur-admin/edit-admin/comptable-validateur-edit-admin.component';
 import { ComptableValidateurViewAdminComponent } from './comptable-validateur-admin/view-admin/comptable-validateur-view-admin.component';
 import { ComptableValidateurListAdminComponent } from './comptable-validateur-admin/list-admin/comptable-validateur-list-admin.component';
+import { TauxIsCreateAdminComponent } from './taux-is-admin/create-admin/taux-is-create-admin.component';
+import { TauxIsEditAdminComponent } from './taux-is-admin/edit-admin/taux-is-edit-admin.component';
+import { TauxIsViewAdminComponent } from './taux-is-admin/view-admin/taux-is-view-admin.component';
+import { TauxIsListAdminComponent } from './taux-is-admin/list-admin/taux-is-list-admin.component';
 import { DeclarationIsCreateAdminComponent } from './declaration-is-admin/create-admin/declaration-is-create-admin.component';
 import { DeclarationIsEditAdminComponent } from './declaration-is-admin/edit-admin/declaration-is-edit-admin.component';
 import { DeclarationIsViewAdminComponent } from './declaration-is-admin/view-admin/declaration-is-view-admin.component';
@@ -55,6 +59,10 @@ import {PaginatorModule} from 'primeng/paginator';
     ComptableValidateurListAdminComponent,
     ComptableValidateurViewAdminComponent,
     ComptableValidateurEditAdminComponent,
+    TauxIsCreateAdminComponent,
+    TauxIsListAdminComponent,
+    TauxIsViewAdminComponent,
+    TauxIsEditAdminComponent,
     DeclarationIsCreateAdminComponent,
     DeclarationIsListAdminComponent,
     DeclarationIsViewAdminComponent,
@@ -98,6 +106,10 @@ import {PaginatorModule} from 'primeng/paginator';
   ComptableValidateurListAdminComponent,
   ComptableValidateurViewAdminComponent,
   ComptableValidateurEditAdminComponent,
+  TauxIsCreateAdminComponent,
+  TauxIsListAdminComponent,
+  TauxIsViewAdminComponent,
+  TauxIsEditAdminComponent,
   DeclarationIsCreateAdminComponent,
   DeclarationIsListAdminComponent,
   DeclarationIsViewAdminComponent,

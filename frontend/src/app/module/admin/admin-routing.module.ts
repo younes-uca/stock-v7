@@ -55,6 +55,12 @@ import { RegisterAdminComponent } from './register-admin/register-admin.componen
                         },
                         {
 
+                            path: 'cheque',
+                            loadChildren: () => import('./view/cheque/cheque-admin-routing.module').then(x=>x.ChequeAdminRoutingModule),
+                            canActivate: [AuthGuard],
+                        },
+                        {
+
                             path: 'abonne',
                             loadChildren: () => import('./view/abonne/abonne-admin-routing.module').then(x=>x.AbonneAdminRoutingModule),
                             canActivate: [AuthGuard],
@@ -79,8 +85,8 @@ import { RegisterAdminComponent } from './register-admin/register-admin.componen
                         },
                         {
 
-                            path: 'stock',
-                            loadChildren: () => import('./view/stock/stock-admin-routing.module').then(x=>x.StockAdminRoutingModule),
+                            path: 'devis',
+                            loadChildren: () => import('./view/devis/devis-admin-routing.module').then(x=>x.DevisAdminRoutingModule),
                             canActivate: [AuthGuard],
                         },
                         {

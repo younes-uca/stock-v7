@@ -13,6 +13,11 @@
     "comptableTraitantNom": "Nom",
     "comptableTraitantPrenom": "Prenom",
 
+    "banqueTabPan": "Banque",
+    "banqueHeader": "Liste des banques",
+    "banqueLibelle": "Libelle",
+    "banqueCode": "Code",
+
     "fournisseurTabPan": "Fournisseur",
     "fournisseurHeader": "Liste des fournisseurs",
     "fournisseurIce": "Ice",
@@ -45,6 +50,13 @@
     "avoirVenteItemQuantite": "Quantite",
     "avoirVenteItemAvoirVente": "Avoir vente",
 
+    "demandeItemTabPan": "Demande item",
+    "demandeItemHeader": "Liste des demande items",
+    "demandeItemPrix": "Prix",
+    "demandeItemProduit": "Produit",
+    "demandeItemQuantite": "Quantite",
+    "demandeItemDemande": "Demande",
+
     "paiementDemandeTabPan": "Paiement demande",
     "paiementDemandeHeader": "Liste des paiement demandes",
     "paiementDemandeReference": "Reference",
@@ -68,19 +80,6 @@
     "Reception items": "Reception items",
     "receptionEtatReception": "Etat reception",
 
-    "devisItemFournisseurTabPan": "Devis item fournisseur",
-    "devisItemFournisseurHeader": "Liste des devis item fournisseurs",
-    "devisItemFournisseurProduit": "Produit",
-    "devisItemFournisseurPrixUnitaire": "Prix unitaire",
-    "devisItemFournisseurQuantite": "Quantite",
-    "devisItemFournisseurRemise": "Remise",
-    "devisItemFournisseurDevisFournisseur": "Devis fournisseur",
-
-    "proprietaireChequeBanqueTabPan": "Proprietaire cheque banque",
-    "proprietaireChequeBanqueHeader": "Liste des proprietaire cheque banques",
-    "proprietaireChequeBanqueProprietaireCheque": "Proprietaire cheque",
-    "proprietaireChequeBanqueBanque": "Banque",
-
     "classComptableTabPan": "Class comptable",
     "classComptableHeader": "Liste des class comptables",
     "classComptableLibelle": "Libelle",
@@ -96,18 +95,21 @@
     "sousClassComptableCompteComptables": "Compte comptables",
     "Compte comptables": "Compte comptables",
 
-    "avoirAchatItemTabPan": "Avoir achat item",
-    "avoirAchatItemHeader": "Liste des avoir achat items",
-    "avoirAchatItemProduit": "Produit",
-    "avoirAchatItemMontant": "Montant",
-    "avoirAchatItemQuantite": "Quantite",
-    "avoirAchatItemAvoirAchat": "Avoir achat",
-
     "etatLivraisonTabPan": "Etat livraison",
     "etatLivraisonHeader": "Liste des etat livraisons",
     "etatLivraisonLibelle": "Libelle",
     "etatLivraisonCode": "Code",
     "etatLivraisonStyle": "Style",
+
+    "devisFournisseurTabPan": "Devis fournisseur",
+    "devisFournisseurHeader": "Liste des devis fournisseurs",
+    "devisFournisseurReference": "Reference",
+    "devisFournisseurDateDevis": "Date devis",
+    "devisFournisseurTotal": "Total",
+    "devisFournisseurDescription": "Description",
+    "devisFournisseurFournisseur": "Fournisseur",
+    "devisFournisseurDevisItemFournisseurs": "Devis item fournisseurs",
+    "Devis item fournisseurs": "Devis item fournisseurs",
 
     "bilanTabPan": "Bilan",
     "bilanHeader": "Liste des bilans",
@@ -143,16 +145,18 @@
     "Stores": "Stores",
     "societeAbonne": "Abonne",
 
+    "stockProduitTabPan": "Stock produit",
+    "stockProduitHeader": "Liste des stock produits",
+    "stockProduitMagasin": "Magasin",
+    "stockProduitProduit": "Produit",
+    "stockProduitQuantite": "Quantite",
+    "stockProduitQuantiteDeffecteuse": "Quantite deffecteuse",
+
     "tauxRetardTvaTabPan": "Taux retard tva",
     "tauxRetardTvaHeader": "Liste des taux retard tvas",
     "tauxRetardTvaDateApplicationMin": "Date application min",
     "tauxRetardTvaDateApplicationMax": "Date application max",
     "tauxRetardTvaMontant": "Montant",
-
-    "proprietaireChequeTabPan": "Proprietaire cheque",
-    "proprietaireChequeHeader": "Liste des proprietaire cheques",
-    "proprietaireChequeNom": "Nom",
-    "proprietaireChequeCode": "Code",
 
     "achatTabPan": "Achat",
     "achatHeader": "Liste des achats",
@@ -169,13 +173,6 @@
     "achatAvoirAchats": "Avoir achats",
     "Avoir achats": "Avoir achats",
     "achatStore": "Store",
-
-    "demandeItemTabPan": "Demande item",
-    "demandeItemHeader": "Liste des demande items",
-    "demandeItemPrix": "Prix",
-    "demandeItemProduit": "Produit",
-    "demandeItemQuantite": "Quantite",
-    "demandeItemDemande": "Demande",
 
     "declarationTvaTabPan": "Declaration tva",
     "declarationTvaHeader": "Liste des declaration tvas",
@@ -232,16 +229,6 @@
     "clientDescription": "Description",
     "clientCreance": "Creance",
 
-    "devisFournisseurTabPan": "Devis fournisseur",
-    "devisFournisseurHeader": "Liste des devis fournisseurs",
-    "devisFournisseurReference": "Reference",
-    "devisFournisseurDateDevis": "Date devis",
-    "devisFournisseurTotal": "Total",
-    "devisFournisseurDescription": "Description",
-    "devisFournisseurFournisseur": "Fournisseur",
-    "devisFournisseurDevisItemFournisseurs": "Devis item fournisseurs",
-    "Devis item fournisseurs": "Devis item fournisseurs",
-
     "abonneTabPan": "Abonne",
     "abonneHeader": "Liste des abonnes",
     "abonneCode": "Code",
@@ -262,15 +249,6 @@
     "abonneIce": "Ice",
     "abonneSocietes": "Societes",
     "Societes": "Societes",
-
-    "commandeItemTabPan": "Commande item",
-    "commandeItemHeader": "Liste des commande items",
-    "commandeItemPrix": "Prix",
-    "commandeItemQuantite": "Quantite",
-    "commandeItemQuantiteReceptionne": "Quantite receptionne",
-    "commandeItemProduit": "Produit",
-    "commandeItemCommande": "Commande",
-    "commandeItemEtatCommande": "Etat commande",
 
     "paiementAchatTabPan": "Paiement achat",
     "paiementAchatHeader": "Liste des paiement achats",
@@ -306,12 +284,6 @@
     "produitStockProduits": "Stock produits",
     "Stock produits": "Stock produits",
 
-    "livraisonItemTabPan": "Livraison item",
-    "livraisonItemHeader": "Liste des livraison items",
-    "livraisonItemProduit": "Produit",
-    "livraisonItemQuantite": "Quantite",
-    "livraisonItemLivraison": "Livraison",
-
     "avoirVenteTabPan": "Avoir vente",
     "avoirVenteHeader": "Liste des avoir ventes",
     "avoirVenteDateAvoir": "Date avoir",
@@ -325,6 +297,13 @@
     "compteComptableLibelle": "Libelle",
     "compteComptableCode": "Code",
     "compteComptableSousClassComptable": "Sous class comptable",
+
+    "avoirAchatItemTabPan": "Avoir achat item",
+    "avoirAchatItemHeader": "Liste des avoir achat items",
+    "avoirAchatItemProduit": "Produit",
+    "avoirAchatItemMontant": "Montant",
+    "avoirAchatItemQuantite": "Quantite",
+    "avoirAchatItemAvoirAchat": "Avoir achat",
 
     "commandeTabPan": "Commande",
     "commandeHeader": "Liste des commandes",
@@ -350,6 +329,11 @@
     "uniteMesureHeader": "Liste des unite mesures",
     "uniteMesureLibelle": "Libelle",
     "uniteMesureCode": "Code",
+
+    "proprietaireChequeBanqueTabPan": "Proprietaire cheque banque",
+    "proprietaireChequeBanqueHeader": "Liste des proprietaire cheque banques",
+    "proprietaireChequeBanqueProprietaireCheque": "Proprietaire cheque",
+    "proprietaireChequeBanqueBanque": "Banque",
 
     "paiementLivraisonTabPan": "Paiement livraison",
     "paiementLivraisonHeader": "Liste des paiement livraisons",
@@ -377,6 +361,14 @@
     "tauxIsPourcentage": "Pourcentage",
     "tauxIsCotisationMinimale": "Cotisation minimale",
 
+    "devisItemFournisseurTabPan": "Devis item fournisseur",
+    "devisItemFournisseurHeader": "Liste des devis item fournisseurs",
+    "devisItemFournisseurProduit": "Produit",
+    "devisItemFournisseurPrixUnitaire": "Prix unitaire",
+    "devisItemFournisseurQuantite": "Quantite",
+    "devisItemFournisseurRemise": "Remise",
+    "devisItemFournisseurDevisFournisseur": "Devis fournisseur",
+
     "declarationIsTabPan": "Declaration is",
     "declarationIsHeader": "Liste des declaration is",
     "declarationIsDateDeclaration": "Date declaration",
@@ -392,12 +384,11 @@
     "declarationIsComptableTraitant": "Comptable traitant",
     "declarationIsComptableValidateur": "Comptable validateur",
 
-    "stockProduitTabPan": "Stock produit",
-    "stockProduitHeader": "Liste des stock produits",
-    "stockProduitMagasin": "Magasin",
-    "stockProduitProduit": "Produit",
-    "stockProduitQuantite": "Quantite",
-    "stockProduitQuantiteDeffecteuse": "Quantite deffecteuse",
+    "livraisonItemTabPan": "Livraison item",
+    "livraisonItemHeader": "Liste des livraison items",
+    "livraisonItemProduit": "Produit",
+    "livraisonItemQuantite": "Quantite",
+    "livraisonItemLivraison": "Livraison",
 
     "modePaiementTabPan": "Mode paiement",
     "modePaiementHeader": "Liste des mode paiements",
@@ -418,6 +409,20 @@
     "magasinNom": "Nom",
     "magasinAdresse": "Adresse",
     "magasinStore": "Store",
+
+    "proprietaireChequeTabPan": "Proprietaire cheque",
+    "proprietaireChequeHeader": "Liste des proprietaire cheques",
+    "proprietaireChequeNom": "Nom",
+    "proprietaireChequeCode": "Code",
+
+    "commandeItemTabPan": "Commande item",
+    "commandeItemHeader": "Liste des commande items",
+    "commandeItemPrix": "Prix",
+    "commandeItemQuantite": "Quantite",
+    "commandeItemQuantiteReceptionne": "Quantite receptionne",
+    "commandeItemProduit": "Produit",
+    "commandeItemCommande": "Commande",
+    "commandeItemEtatCommande": "Etat commande",
 
     "venteTabPan": "Vente",
     "venteHeader": "Liste des ventes",
@@ -461,11 +466,6 @@
     "demandePaiementDemandes": "Paiement demandes",
     "Paiement demandes": "Paiement demandes",
     "demandeEtatDemande": "Etat demande",
-
-    "banqueTabPan": "Banque",
-    "banqueHeader": "Liste des banques",
-    "banqueLibelle": "Libelle",
-    "banqueCode": "Code",
 
     "achatItemTabPan": "Achat item",
     "achatItemHeader": "Liste des achat items",

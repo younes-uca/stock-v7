@@ -17,10 +17,10 @@ import {AvoirVenteCriteria} from 'src/app/controller/criteria/AvoirVenteCriteria
 
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitService} from 'src/app/controller/service/Produit.service';
-import {VenteDto} from 'src/app/controller/model/Vente.model';
-import {VenteService} from 'src/app/controller/service/Vente.service';
 import {AvoirVenteItemDto} from 'src/app/controller/model/AvoirVenteItem.model';
 import {AvoirVenteItemService} from 'src/app/controller/service/AvoirVenteItem.service';
+import {VenteDto} from 'src/app/controller/model/Vente.model';
+import {VenteService} from 'src/app/controller/service/Vente.service';
 
 @Component({
   selector: 'app-avoir-vente-edit-admin',
@@ -38,7 +38,7 @@ export class AvoirVenteEditAdminComponent extends AbstractEditController<AvoirVe
     constructor(private datePipe: DatePipe, private avoirVenteService: AvoirVenteService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private produitService: ProduitService, private venteService: VenteService, private avoirVenteItemService: AvoirVenteItemService
+, private produitService: ProduitService, private avoirVenteItemService: AvoirVenteItemService, private venteService: VenteService
     ) {
         super(datePipe, avoirVenteService, messageService, confirmationService, roleService, router, stringUtilService);
     }

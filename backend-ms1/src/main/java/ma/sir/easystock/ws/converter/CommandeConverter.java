@@ -17,21 +17,21 @@ import ma.sir.easystock.ws.dto.CommandeDto;
 public class CommandeConverter extends AbstractConverter<Commande, CommandeDto, CommandeHistory> {
 
     @Autowired
-    private CommandeItemConverter commandeItemConverter ;
+    private ReceptionConverter receptionConverter ;
     @Autowired
-    private EtatCommandeConverter etatCommandeConverter ;
+    private StoreConverter storeConverter ;
     @Autowired
-    private ClientConverter clientConverter ;
+    private ReceptionItemConverter receptionItemConverter ;
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
     private EtatReceptionConverter etatReceptionConverter ;
     @Autowired
-    private ReceptionConverter receptionConverter ;
+    private EtatCommandeConverter etatCommandeConverter ;
     @Autowired
-    private ReceptionItemConverter receptionItemConverter ;
+    private CommandeItemConverter commandeItemConverter ;
     @Autowired
-    private StoreConverter storeConverter ;
+    private ClientConverter clientConverter ;
     private boolean client;
     private boolean store;
     private boolean etatCommande;
@@ -137,23 +137,23 @@ public class CommandeConverter extends AbstractConverter<Commande, CommandeDto, 
     }
 
 
-    public CommandeItemConverter getCommandeItemConverter(){
-        return this.commandeItemConverter;
+    public ReceptionConverter getReceptionConverter(){
+        return this.receptionConverter;
     }
-    public void setCommandeItemConverter(CommandeItemConverter commandeItemConverter ){
-        this.commandeItemConverter = commandeItemConverter;
+    public void setReceptionConverter(ReceptionConverter receptionConverter ){
+        this.receptionConverter = receptionConverter;
     }
-    public EtatCommandeConverter getEtatCommandeConverter(){
-        return this.etatCommandeConverter;
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
     }
-    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
-        this.etatCommandeConverter = etatCommandeConverter;
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
     }
-    public ClientConverter getClientConverter(){
-        return this.clientConverter;
+    public ReceptionItemConverter getReceptionItemConverter(){
+        return this.receptionItemConverter;
     }
-    public void setClientConverter(ClientConverter clientConverter ){
-        this.clientConverter = clientConverter;
+    public void setReceptionItemConverter(ReceptionItemConverter receptionItemConverter ){
+        this.receptionItemConverter = receptionItemConverter;
     }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
@@ -167,23 +167,23 @@ public class CommandeConverter extends AbstractConverter<Commande, CommandeDto, 
     public void setEtatReceptionConverter(EtatReceptionConverter etatReceptionConverter ){
         this.etatReceptionConverter = etatReceptionConverter;
     }
-    public ReceptionConverter getReceptionConverter(){
-        return this.receptionConverter;
+    public EtatCommandeConverter getEtatCommandeConverter(){
+        return this.etatCommandeConverter;
     }
-    public void setReceptionConverter(ReceptionConverter receptionConverter ){
-        this.receptionConverter = receptionConverter;
+    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
+        this.etatCommandeConverter = etatCommandeConverter;
     }
-    public ReceptionItemConverter getReceptionItemConverter(){
-        return this.receptionItemConverter;
+    public CommandeItemConverter getCommandeItemConverter(){
+        return this.commandeItemConverter;
     }
-    public void setReceptionItemConverter(ReceptionItemConverter receptionItemConverter ){
-        this.receptionItemConverter = receptionItemConverter;
+    public void setCommandeItemConverter(CommandeItemConverter commandeItemConverter ){
+        this.commandeItemConverter = commandeItemConverter;
     }
-    public StoreConverter getStoreConverter(){
-        return this.storeConverter;
+    public ClientConverter getClientConverter(){
+        return this.clientConverter;
     }
-    public void setStoreConverter(StoreConverter storeConverter ){
-        this.storeConverter = storeConverter;
+    public void setClientConverter(ClientConverter clientConverter ){
+        this.clientConverter = clientConverter;
     }
     public boolean  isClient(){
         return this.client;

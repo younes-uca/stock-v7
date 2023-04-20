@@ -18,8 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import ma.sir.easystock.service.facade.admin.ProduitAdminService ;
-import ma.sir.easystock.service.facade.admin.MagasinAdminService ;
 import ma.sir.easystock.service.facade.admin.ReceptionAdminService ;
+import ma.sir.easystock.service.facade.admin.MagasinAdminService ;
 
 
 import java.util.List;
@@ -55,9 +55,9 @@ ReceptionItemHistoryDao> implements ReceptionItemAdminService {
     @Autowired
     private ProduitAdminService produitService ;
     @Autowired
-    private MagasinAdminService magasinService ;
-    @Autowired
     private ReceptionAdminService receptionService ;
+    @Autowired
+    private MagasinAdminService magasinService ;
     public ReceptionItemAdminServiceImpl(ReceptionItemDao dao, ReceptionItemHistoryDao historyDao) {
         super(dao, historyDao);
     }

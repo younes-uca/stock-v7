@@ -103,6 +103,11 @@ export class AppMenuComponent implements OnInit {
                       routerLink: ['/app/admin/is/comptable-validateur/list']
                     },
                     {
+                      label: 'Liste devis fournisseur',
+                      icon: 'pi pi-fw pi-plus-circle',
+                      routerLink: ['/app/admin/devis/devis-fournisseur/list']
+                    },
+                    {
                       label: 'Liste taux retard tva',
                       icon: 'pi pi-fw pi-plus-circle',
                       routerLink: ['/app/admin/tva/taux-retard-tva/list']
@@ -118,11 +123,6 @@ export class AppMenuComponent implements OnInit {
                       routerLink: ['/app/admin/vente/paiement-vente/list']
                     },
                     {
-                      label: 'Liste devis fournisseur',
-                      icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/devis-fournisseur/list']
-                    },
-                    {
                       label: 'Liste avoir vente',
                       icon: 'pi pi-fw pi-plus-circle',
                       routerLink: ['/app/admin/vente/avoir-vente/list']
@@ -130,7 +130,7 @@ export class AppMenuComponent implements OnInit {
                     {
                       label: 'Liste taux is',
                       icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/taux-is/list']
+                      routerLink: ['/app/admin/is/taux-is/list']
                     },
                     {
                       label: 'Liste declaration is',
@@ -305,6 +305,11 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi pi-wallet',
                 items:[
                     {
+                      label: 'Liste stock produit',
+                      icon: 'pi pi-fw pi-plus-circle',
+                      routerLink: ['/app/admin/referentiel/stock-produit/list']
+                    },
+                    {
                       label: 'Liste categorie produit',
                       icon: 'pi pi-fw pi-plus-circle',
                       routerLink: ['/app/admin/referentiel/categorie-produit/list']
@@ -314,11 +319,6 @@ export class AppMenuComponent implements OnInit {
                       icon: 'pi pi-fw pi-plus-circle',
                       routerLink: ['/app/admin/referentiel/produit/list']
                     },
-                    {
-                      label: 'Liste stock produit',
-                      icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/stock-produit/list']
-                    },
                 ]
               },
               {
@@ -326,19 +326,19 @@ export class AppMenuComponent implements OnInit {
                 icon: 'pi pi-wallet',
                 items:[
                     {
+                      label: 'Liste banque',
+                      icon: 'pi pi-fw pi-plus-circle',
+                      routerLink: ['/app/admin/cheque/banque/list']
+                    },
+                    {
                       label: 'Liste proprietaire cheque banque',
                       icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/proprietaire-cheque-banque/list']
+                      routerLink: ['/app/admin/cheque/proprietaire-cheque-banque/list']
                     },
                     {
                       label: 'Liste proprietaire cheque',
                       icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/proprietaire-cheque/list']
-                    },
-                    {
-                      label: 'Liste banque',
-                      icon: 'pi pi-fw pi-plus-circle',
-                      routerLink: ['/app/admin/stock/banque/list']
+                      routerLink: ['/app/admin/cheque/proprietaire-cheque/list']
                     },
                 ]
               },

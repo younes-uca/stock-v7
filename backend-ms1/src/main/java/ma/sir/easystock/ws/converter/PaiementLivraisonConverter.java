@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.PaiementLivraisonDto;
 public class PaiementLivraisonConverter extends AbstractConverter<PaiementLivraison, PaiementLivraisonDto, PaiementLivraisonHistory> {
 
     @Autowired
-    private ModePaiementConverter modePaiementConverter ;
-    @Autowired
     private LivraisonConverter livraisonConverter ;
+    @Autowired
+    private ModePaiementConverter modePaiementConverter ;
     @Autowired
     private VenteConverter venteConverter ;
     private boolean livraison;
@@ -104,17 +104,17 @@ public class PaiementLivraisonConverter extends AbstractConverter<PaiementLivrai
     }
 
 
-    public ModePaiementConverter getModePaiementConverter(){
-        return this.modePaiementConverter;
-    }
-    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
-        this.modePaiementConverter = modePaiementConverter;
-    }
     public LivraisonConverter getLivraisonConverter(){
         return this.livraisonConverter;
     }
     public void setLivraisonConverter(LivraisonConverter livraisonConverter ){
         this.livraisonConverter = livraisonConverter;
+    }
+    public ModePaiementConverter getModePaiementConverter(){
+        return this.modePaiementConverter;
+    }
+    public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
+        this.modePaiementConverter = modePaiementConverter;
     }
     public VenteConverter getVenteConverter(){
         return this.venteConverter;

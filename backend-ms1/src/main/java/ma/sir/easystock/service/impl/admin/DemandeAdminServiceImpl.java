@@ -21,12 +21,13 @@ import org.springframework.transaction.annotation.Transactional;
 import ma.sir.easystock.bean.core.DemandeItem;
 import ma.sir.easystock.bean.core.PaiementDemande;
 
-import ma.sir.easystock.service.facade.admin.EtatDemandeAdminService ;
 import ma.sir.easystock.service.facade.admin.ProduitAdminService ;
-import ma.sir.easystock.service.facade.admin.ClientAdminService ;
 import ma.sir.easystock.service.facade.admin.LivraisonAdminService ;
+import ma.sir.easystock.service.facade.admin.EtatDemandeAdminService ;
 import ma.sir.easystock.service.facade.admin.PaiementDemandeAdminService ;
+import ma.sir.easystock.service.facade.admin.DemandeItemAdminService ;
 import ma.sir.easystock.service.facade.admin.StoreAdminService ;
+import ma.sir.easystock.service.facade.admin.ClientAdminService ;
 import ma.sir.easystock.service.facade.admin.MagasinAdminService ;
 
 
@@ -124,17 +125,19 @@ DemandeHistoryDao> implements DemandeAdminService {
     }
 
     @Autowired
-    private EtatDemandeAdminService etatDemandeService ;
-    @Autowired
     private ProduitAdminService produitService ;
-    @Autowired
-    private ClientAdminService clientService ;
     @Autowired
     private LivraisonAdminService livraisonService ;
     @Autowired
+    private EtatDemandeAdminService etatDemandeService ;
+    @Autowired
     private PaiementDemandeAdminService paiementDemandeService ;
     @Autowired
+    private DemandeItemAdminService demandeItemService ;
+    @Autowired
     private StoreAdminService storeService ;
+    @Autowired
+    private ClientAdminService clientService ;
     @Autowired
     private MagasinAdminService magasinService ;
     public DemandeAdminServiceImpl(DemandeDao dao, DemandeHistoryDao historyDao) {

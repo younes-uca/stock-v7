@@ -17,15 +17,15 @@ import ma.sir.easystock.ws.dto.LivraisonDto;
 public class LivraisonConverter extends AbstractConverter<Livraison, LivraisonDto, LivraisonHistory> {
 
     @Autowired
+    private ProduitConverter produitConverter ;
+    @Autowired
     private LivraisonItemConverter livraisonItemConverter ;
     @Autowired
     private DemandeConverter demandeConverter ;
     @Autowired
-    private EtatLivraisonConverter etatLivraisonConverter ;
-    @Autowired
-    private ProduitConverter produitConverter ;
-    @Autowired
     private ClientConverter clientConverter ;
+    @Autowired
+    private EtatLivraisonConverter etatLivraisonConverter ;
     private boolean demande;
     private boolean etatLivraison;
     private boolean client;
@@ -110,6 +110,12 @@ public class LivraisonConverter extends AbstractConverter<Livraison, LivraisonDt
     }
 
 
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
+    }
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
+    }
     public LivraisonItemConverter getLivraisonItemConverter(){
         return this.livraisonItemConverter;
     }
@@ -122,23 +128,17 @@ public class LivraisonConverter extends AbstractConverter<Livraison, LivraisonDt
     public void setDemandeConverter(DemandeConverter demandeConverter ){
         this.demandeConverter = demandeConverter;
     }
-    public EtatLivraisonConverter getEtatLivraisonConverter(){
-        return this.etatLivraisonConverter;
-    }
-    public void setEtatLivraisonConverter(EtatLivraisonConverter etatLivraisonConverter ){
-        this.etatLivraisonConverter = etatLivraisonConverter;
-    }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
-    }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
-    }
     public ClientConverter getClientConverter(){
         return this.clientConverter;
     }
     public void setClientConverter(ClientConverter clientConverter ){
         this.clientConverter = clientConverter;
+    }
+    public EtatLivraisonConverter getEtatLivraisonConverter(){
+        return this.etatLivraisonConverter;
+    }
+    public void setEtatLivraisonConverter(EtatLivraisonConverter etatLivraisonConverter ){
+        this.etatLivraisonConverter = etatLivraisonConverter;
     }
     public boolean  isDemande(){
         return this.demande;

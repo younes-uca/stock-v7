@@ -18,11 +18,11 @@ public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, D
     @Autowired
     private ComptableValidateurConverter comptableValidateurConverter ;
     @Autowired
+    private SocieteConverter societeConverter ;
+    @Autowired
     private TauxRetardTvaConverter tauxRetardTvaConverter ;
     @Autowired
     private ComptableTraitantConverter comptableTraitantConverter ;
-    @Autowired
-    private SocieteConverter societeConverter ;
     private boolean societe;
     private boolean tauxRetardTva;
     private boolean comptableTraitant;
@@ -129,6 +129,12 @@ public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, D
     public void setComptableValidateurConverter(ComptableValidateurConverter comptableValidateurConverter ){
         this.comptableValidateurConverter = comptableValidateurConverter;
     }
+    public SocieteConverter getSocieteConverter(){
+        return this.societeConverter;
+    }
+    public void setSocieteConverter(SocieteConverter societeConverter ){
+        this.societeConverter = societeConverter;
+    }
     public TauxRetardTvaConverter getTauxRetardTvaConverter(){
         return this.tauxRetardTvaConverter;
     }
@@ -140,12 +146,6 @@ public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, D
     }
     public void setComptableTraitantConverter(ComptableTraitantConverter comptableTraitantConverter ){
         this.comptableTraitantConverter = comptableTraitantConverter;
-    }
-    public SocieteConverter getSocieteConverter(){
-        return this.societeConverter;
-    }
-    public void setSocieteConverter(SocieteConverter societeConverter ){
-        this.societeConverter = societeConverter;
     }
     public boolean  isSociete(){
         return this.societe;

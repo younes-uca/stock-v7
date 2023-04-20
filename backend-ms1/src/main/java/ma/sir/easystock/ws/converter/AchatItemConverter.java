@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.AchatItemDto;
 public class AchatItemConverter extends AbstractConverter<AchatItem, AchatItemDto, AchatItemHistory> {
 
     @Autowired
-    private AchatConverter achatConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
+    @Autowired
+    private AchatConverter achatConverter ;
     private boolean produit;
     private boolean achat;
 
@@ -98,17 +98,17 @@ public class AchatItemConverter extends AbstractConverter<AchatItem, AchatItemDt
     }
 
 
-    public AchatConverter getAchatConverter(){
-        return this.achatConverter;
-    }
-    public void setAchatConverter(AchatConverter achatConverter ){
-        this.achatConverter = achatConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
+    }
+    public AchatConverter getAchatConverter(){
+        return this.achatConverter;
+    }
+    public void setAchatConverter(AchatConverter achatConverter ){
+        this.achatConverter = achatConverter;
     }
     public boolean  isProduit(){
         return this.produit;

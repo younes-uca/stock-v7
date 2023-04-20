@@ -17,12 +17,12 @@ import {DeclarationIsCriteria} from 'src/app/controller/criteria/DeclarationIsCr
 
 import {ComptableValidateurDto} from 'src/app/controller/model/ComptableValidateur.model';
 import {ComptableValidateurService} from 'src/app/controller/service/ComptableValidateur.service';
-import {ComptableTraitantDto} from 'src/app/controller/model/ComptableTraitant.model';
-import {ComptableTraitantService} from 'src/app/controller/service/ComptableTraitant.service';
 import {SocieteDto} from 'src/app/controller/model/Societe.model';
 import {SocieteService} from 'src/app/controller/service/Societe.service';
 import {TauxIsDto} from 'src/app/controller/model/TauxIs.model';
 import {TauxIsService} from 'src/app/controller/service/TauxIs.service';
+import {ComptableTraitantDto} from 'src/app/controller/model/ComptableTraitant.model';
+import {ComptableTraitantService} from 'src/app/controller/service/ComptableTraitant.service';
 
 @Component({
   selector: 'app-declaration-is-edit-admin',
@@ -39,7 +39,7 @@ export class DeclarationIsEditAdminComponent extends AbstractEditController<Decl
     constructor(private datePipe: DatePipe, private declarationIsService: DeclarationIsService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private comptableValidateurService: ComptableValidateurService, private comptableTraitantService: ComptableTraitantService, private societeService: SocieteService, private tauxIsService: TauxIsService
+, private comptableValidateurService: ComptableValidateurService, private societeService: SocieteService, private tauxIsService: TauxIsService, private comptableTraitantService: ComptableTraitantService
     ) {
         super(datePipe, declarationIsService, messageService, confirmationService, roleService, router, stringUtilService);
     }
@@ -63,6 +63,17 @@ export class DeclarationIsEditAdminComponent extends AbstractEditController<Decl
 
 
 
+   public async openCreateTauxIs(tauxIs: string) {
+        const isPermistted = await this.roleService.isPermitted('TauxIs', 'edit');
+        if(isPermistted) {
+             this.tauxIs = new TauxIsDto();
+             this.createTauxIsDialog = true;
+        }else{
+             this.messageService.add({
+                severity: 'error', summary: 'erreur', detail: 'problème de permission'
+            });
+        }
+    }
    public async openCreateComptableTraitant(comptableTraitant: string) {
         const isPermistted = await this.roleService.isPermitted('ComptableTraitant', 'edit');
         if(isPermistted) {

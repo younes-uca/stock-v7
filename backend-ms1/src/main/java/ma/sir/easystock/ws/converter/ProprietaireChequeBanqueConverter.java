@@ -15,9 +15,9 @@ import ma.sir.easystock.ws.dto.ProprietaireChequeBanqueDto;
 public class ProprietaireChequeBanqueConverter extends AbstractConverter<ProprietaireChequeBanque, ProprietaireChequeBanqueDto, ProprietaireChequeBanqueHistory> {
 
     @Autowired
-    private BanqueConverter banqueConverter ;
-    @Autowired
     private ProprietaireChequeConverter proprietaireChequeConverter ;
+    @Autowired
+    private BanqueConverter banqueConverter ;
     private boolean proprietaireCheque;
     private boolean banque;
 
@@ -72,17 +72,17 @@ public class ProprietaireChequeBanqueConverter extends AbstractConverter<Proprie
     }
 
 
-    public BanqueConverter getBanqueConverter(){
-        return this.banqueConverter;
-    }
-    public void setBanqueConverter(BanqueConverter banqueConverter ){
-        this.banqueConverter = banqueConverter;
-    }
     public ProprietaireChequeConverter getProprietaireChequeConverter(){
         return this.proprietaireChequeConverter;
     }
     public void setProprietaireChequeConverter(ProprietaireChequeConverter proprietaireChequeConverter ){
         this.proprietaireChequeConverter = proprietaireChequeConverter;
+    }
+    public BanqueConverter getBanqueConverter(){
+        return this.banqueConverter;
+    }
+    public void setBanqueConverter(BanqueConverter banqueConverter ){
+        this.banqueConverter = banqueConverter;
     }
     public boolean  isProprietaireCheque(){
         return this.proprietaireCheque;

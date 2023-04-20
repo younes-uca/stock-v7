@@ -17,11 +17,11 @@ import ma.sir.easystock.ws.dto.ProduitDto;
 public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, ProduitHistory> {
 
     @Autowired
+    private CategorieProduitConverter categorieProduitConverter ;
+    @Autowired
     private StockProduitConverter stockProduitConverter ;
     @Autowired
     private StoreConverter storeConverter ;
-    @Autowired
-    private CategorieProduitConverter categorieProduitConverter ;
     @Autowired
     private MarqueConverter marqueConverter ;
     @Autowired
@@ -146,6 +146,12 @@ public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, Pro
     }
 
 
+    public CategorieProduitConverter getCategorieProduitConverter(){
+        return this.categorieProduitConverter;
+    }
+    public void setCategorieProduitConverter(CategorieProduitConverter categorieProduitConverter ){
+        this.categorieProduitConverter = categorieProduitConverter;
+    }
     public StockProduitConverter getStockProduitConverter(){
         return this.stockProduitConverter;
     }
@@ -157,12 +163,6 @@ public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, Pro
     }
     public void setStoreConverter(StoreConverter storeConverter ){
         this.storeConverter = storeConverter;
-    }
-    public CategorieProduitConverter getCategorieProduitConverter(){
-        return this.categorieProduitConverter;
-    }
-    public void setCategorieProduitConverter(CategorieProduitConverter categorieProduitConverter ){
-        this.categorieProduitConverter = categorieProduitConverter;
     }
     public MarqueConverter getMarqueConverter(){
         return this.marqueConverter;

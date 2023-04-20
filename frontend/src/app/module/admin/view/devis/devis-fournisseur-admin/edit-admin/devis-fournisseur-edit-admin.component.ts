@@ -1,41 +1,46 @@
 import {Component, OnInit, Input} from '@angular/core';
 
-import {RoleService} from 'src/app/zynerator/security/Role.service';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {Router} from '@angular/router';
+import {MenuItem} from 'primeng/api';
 import { environment } from 'src/environments/environment';
-import { DatePipe } from '@angular/common';
+import {DatePipe} from '@angular/common';
 
-import { StringUtilService } from 'src/app/zynerator/util/StringUtil.service';
-import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractCreateController';
+import {AbstractEditController} from 'src/app/zynerator/controller/AbstractEditController';
+import {RoleService} from 'src/app/zynerator/security/Role.service';
+import {StringUtilService} from 'src/app/zynerator/util/StringUtil.service';
 
 import {DevisFournisseurService} from 'src/app/controller/service/DevisFournisseur.service';
 import {DevisFournisseurDto} from 'src/app/controller/model/DevisFournisseur.model';
 import {DevisFournisseurCriteria} from 'src/app/controller/criteria/DevisFournisseurCriteria.model';
-import {DevisItemFournisseurDto} from 'src/app/controller/model/DevisItemFournisseur.model';
-import {DevisItemFournisseurService} from 'src/app/controller/service/DevisItemFournisseur.service';
+
+
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
 import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
+import {DevisItemFournisseurDto} from 'src/app/controller/model/DevisItemFournisseur.model';
+import {DevisItemFournisseurService} from 'src/app/controller/service/DevisItemFournisseur.service';
+
 @Component({
-  selector: 'app-devis-fournisseur-create-admin',
-  templateUrl: './devis-fournisseur-create-admin.component.html'
+  selector: 'app-devis-fournisseur-edit-admin',
+  templateUrl: './devis-fournisseur-edit-admin.component.html'
 })
-export class DevisFournisseurCreateAdminComponent extends AbstractCreateController<DevisFournisseurDto, DevisFournisseurCriteria, DevisFournisseurService>  implements OnInit {
+export class DevisFournisseurEditAdminComponent extends AbstractEditController<DevisFournisseurDto, DevisFournisseurCriteria, DevisFournisseurService>   implements OnInit {
 
     private _devisItemFournisseursElement = new DevisItemFournisseurDto();
 
+    private _validDevisFournisseurReference = true;
 
-   private _validDevisFournisseurReference = true;
     private _validFournisseurIce = true;
     private _validFournisseurNom = true;
 
+
+
     constructor(private datePipe: DatePipe, private devisFournisseurService: DevisFournisseurService
-     , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
-    , private confirmationService: ConfirmationService, private router: Router  
-, private devisItemFournisseurService: DevisItemFournisseurService, private produitService: ProduitService, private fournisseurService: FournisseurService
+        , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
+        , private confirmationService: ConfirmationService, private router: Router  
+, private produitService: ProduitService, private fournisseurService: FournisseurService, private devisItemFournisseurService: DevisItemFournisseurService
     ) {
         super(datePipe, devisFournisseurService, messageService, confirmationService, roleService, router, stringUtilService);
     }
@@ -43,33 +48,33 @@ export class DevisFournisseurCreateAdminComponent extends AbstractCreateControll
     ngOnInit(): void {
         this.devisItemFournisseursElement.produit = new ProduitDto();
         this.produitService.findAll().subscribe((data) => this.produits = data);
+
     this.fournisseur = new FournisseurDto();
     this.fournisseurService.findAll().subscribe((data) => this.fournisseurs = data);
 }
 
-
-
-    validateDevisItemFournisseurs(){
+    public validateDevisItemFournisseurs(){
         this.errorMessages = new Array();
     }
-
-
-    public setValidation(value: boolean){
+    public setValidation(value : boolean){
         this.validDevisFournisseurReference = value;
-    }
-
-    public addDevisItemFournisseurs() {
+        }
+   public addDevisItemFournisseurs() {
         if( this.item.devisItemFournisseurs == null )
             this.item.devisItemFournisseurs = new Array<DevisItemFournisseurDto>();
        this.validateDevisItemFournisseurs();
        if (this.errorMessages.length === 0) {
-              this.item.devisItemFournisseurs.push({... this.devisItemFournisseursElement});
-              this.devisItemFournisseursElement = new DevisItemFournisseurDto();
+            if(this.devisItemFournisseursElement.id == null){
+                this.item.devisItemFournisseurs.push(this.devisItemFournisseursElement);
+            }else{
+                const index = this.item.devisItemFournisseurs.findIndex(e => e.id == this.devisItemFournisseursElement.id);
+                this.item.devisItemFournisseurs[index] = this.devisItemFournisseursElement;
+            }
+          this.devisItemFournisseursElement = new DevisItemFournisseurDto();
        }else{
-            this.messageService.add({severity: 'error',summary: 'Erreurs',detail: 'Merci de corrigé les erreurs suivant : ' + this.errorMessages});
-       }
-    }
-
+            this.messageService.add({severity: 'error',summary: 'Erreurs', detail: 'Merci de corrigé les erreurs suivant : ' + this.errorMessages});
+        }
+   }
 
     public deleteDevisItemFournisseur(p: DevisItemFournisseurDto) {
         this.item.devisItemFournisseurs.forEach((element, index) => {
@@ -81,17 +86,14 @@ export class DevisFournisseurCreateAdminComponent extends AbstractCreateControll
         this.devisItemFournisseursElement = {... p};
         this.activeTab = 0;
     }
-
-
     public validateForm(): void{
         this.errorMessages = new Array<string>();
         this.validateDevisFournisseurReference();
     }
-
     public validateDevisFournisseurReference(){
         if (this.stringUtilService.isEmpty(this.item.reference)) {
-        this.errorMessages.push('Reference non valide');
-        this.validDevisFournisseurReference = false;
+            this.errorMessages.push('Reference non valide');
+            this.validDevisFournisseurReference = false;
         } else {
             this.validDevisFournisseurReference = true;
         }
@@ -99,51 +101,59 @@ export class DevisFournisseurCreateAdminComponent extends AbstractCreateControll
 
 
 
-    get produit(): ProduitDto {
-        return this.produitService.item;
-    }
-    set produit(value: ProduitDto) {
+
+   get produit(): ProduitDto {
+       return this.produitService.item;
+   }
+  set produit(value: ProduitDto) {
         this.produitService.item = value;
-    }
-    get produits(): Array<ProduitDto> {
+   }
+   get produits(): Array<ProduitDto> {
         return this.produitService.items;
-    }
-    set produits(value: Array<ProduitDto>) {
+   }
+   set produits(value: Array<ProduitDto>) {
         this.produitService.items = value;
-    }
-    get createProduitDialog(): boolean {
+   }
+   get createProduitDialog(): boolean {
        return this.produitService.createDialog;
-    }
-    set createProduitDialog(value: boolean) {
-        this.produitService.createDialog= value;
-    }
-    get fournisseur(): FournisseurDto {
-        return this.fournisseurService.item;
-    }
-    set fournisseur(value: FournisseurDto) {
+   }
+  set createProduitDialog(value: boolean) {
+       this.produitService.createDialog= value;
+   }
+   get fournisseur(): FournisseurDto {
+       return this.fournisseurService.item;
+   }
+  set fournisseur(value: FournisseurDto) {
         this.fournisseurService.item = value;
-    }
-    get fournisseurs(): Array<FournisseurDto> {
+   }
+   get fournisseurs(): Array<FournisseurDto> {
         return this.fournisseurService.items;
-    }
-    set fournisseurs(value: Array<FournisseurDto>) {
+   }
+   set fournisseurs(value: Array<FournisseurDto>) {
         this.fournisseurService.items = value;
-    }
-    get createFournisseurDialog(): boolean {
+   }
+   get createFournisseurDialog(): boolean {
        return this.fournisseurService.createDialog;
-    }
-    set createFournisseurDialog(value: boolean) {
-        this.fournisseurService.createDialog= value;
+   }
+  set createFournisseurDialog(value: boolean) {
+       this.fournisseurService.createDialog= value;
+   }
+
+    get devisItemFournisseursElement(): DevisItemFournisseurDto {
+        if( this._devisItemFournisseursElement == null )
+            this._devisItemFournisseursElement = new DevisItemFournisseurDto();
+         return this._devisItemFournisseursElement;
     }
 
-
+    set devisItemFournisseursElement(value: DevisItemFournisseurDto) {
+        this._devisItemFournisseursElement = value;
+    }
 
     get validDevisFournisseurReference(): boolean {
         return this._validDevisFournisseurReference;
     }
-
     set validDevisFournisseurReference(value: boolean) {
-         this._validDevisFournisseurReference = value;
+        this._validDevisFournisseurReference = value;
     }
 
     get validFournisseurIce(): boolean {
@@ -158,15 +168,4 @@ export class DevisFournisseurCreateAdminComponent extends AbstractCreateControll
     set validFournisseurNom(value: boolean) {
         this._validFournisseurNom = value;
     }
-
-    get devisItemFournisseursElement(): DevisItemFournisseurDto {
-        if( this._devisItemFournisseursElement == null )
-            this._devisItemFournisseursElement = new DevisItemFournisseurDto();
-        return this._devisItemFournisseursElement;
-    }
-
-    set devisItemFournisseursElement(value: DevisItemFournisseurDto) {
-        this._devisItemFournisseursElement = value;
-    }
-
 }

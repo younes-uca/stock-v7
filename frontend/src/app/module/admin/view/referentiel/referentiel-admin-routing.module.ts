@@ -8,6 +8,7 @@ import { AuthGuard } from 'src/app/controller/guards/auth.guard';
 
 
 import { EtatPaiementListAdminComponent } from './etat-paiement-admin/list-admin/etat-paiement-list-admin.component';
+import { StockProduitListAdminComponent } from './stock-produit-admin/list-admin/stock-produit-list-admin.component';
 import { MarqueListAdminComponent } from './marque-admin/list-admin/marque-list-admin.component';
 import { CategorieProduitListAdminComponent } from './categorie-produit-admin/list-admin/categorie-produit-list-admin.component';
 import { ProduitListAdminComponent } from './produit-admin/list-admin/produit-list-admin.component';
@@ -29,6 +30,18 @@ import { ModePaiementListAdminComponent } from './mode-paiement-admin/list-admin
                                 {
                                     path: 'list',
                                     component: EtatPaiementListAdminComponent ,
+                                    canActivate: [AuthGuard]
+                                }
+                            ]
+                        },
+
+                        {
+
+                            path: 'stock-produit',
+                            children: [
+                                {
+                                    path: 'list',
+                                    component: StockProduitListAdminComponent ,
                                     canActivate: [AuthGuard]
                                 }
                             ]

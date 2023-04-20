@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ma.sir.easystock.bean.core.AvoirAchatItem;
 
 import ma.sir.easystock.service.facade.admin.AchatAdminService ;
+import ma.sir.easystock.service.facade.admin.AvoirAchatItemAdminService ;
 
 
 import java.util.List;
@@ -76,6 +77,8 @@ AvoirAchatHistoryDao> implements AvoirAchatAdminService {
 
     @Autowired
     private AchatAdminService achatService ;
+    @Autowired
+    private AvoirAchatItemAdminService avoirAchatItemService ;
     public AvoirAchatAdminServiceImpl(AvoirAchatDao dao, AvoirAchatHistoryDao historyDao) {
         super(dao, historyDao);
     }

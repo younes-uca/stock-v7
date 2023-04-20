@@ -22,6 +22,10 @@ import { EtatPaiementCreateAdminComponent } from './etat-paiement-admin/create-a
 import { EtatPaiementEditAdminComponent } from './etat-paiement-admin/edit-admin/etat-paiement-edit-admin.component';
 import { EtatPaiementViewAdminComponent } from './etat-paiement-admin/view-admin/etat-paiement-view-admin.component';
 import { EtatPaiementListAdminComponent } from './etat-paiement-admin/list-admin/etat-paiement-list-admin.component';
+import { StockProduitCreateAdminComponent } from './stock-produit-admin/create-admin/stock-produit-create-admin.component';
+import { StockProduitEditAdminComponent } from './stock-produit-admin/edit-admin/stock-produit-edit-admin.component';
+import { StockProduitViewAdminComponent } from './stock-produit-admin/view-admin/stock-produit-view-admin.component';
+import { StockProduitListAdminComponent } from './stock-produit-admin/list-admin/stock-produit-list-admin.component';
 import { MarqueCreateAdminComponent } from './marque-admin/create-admin/marque-create-admin.component';
 import { MarqueEditAdminComponent } from './marque-admin/edit-admin/marque-edit-admin.component';
 import { MarqueViewAdminComponent } from './marque-admin/view-admin/marque-view-admin.component';
@@ -63,6 +67,10 @@ import {PaginatorModule} from 'primeng/paginator';
     EtatPaiementListAdminComponent,
     EtatPaiementViewAdminComponent,
     EtatPaiementEditAdminComponent,
+    StockProduitCreateAdminComponent,
+    StockProduitListAdminComponent,
+    StockProduitViewAdminComponent,
+    StockProduitEditAdminComponent,
     MarqueCreateAdminComponent,
     MarqueListAdminComponent,
     MarqueViewAdminComponent,
@@ -118,6 +126,10 @@ import {PaginatorModule} from 'primeng/paginator';
   EtatPaiementListAdminComponent,
   EtatPaiementViewAdminComponent,
   EtatPaiementEditAdminComponent,
+  StockProduitCreateAdminComponent,
+  StockProduitListAdminComponent,
+  StockProduitViewAdminComponent,
+  StockProduitEditAdminComponent,
   MarqueCreateAdminComponent,
   MarqueListAdminComponent,
   MarqueViewAdminComponent,

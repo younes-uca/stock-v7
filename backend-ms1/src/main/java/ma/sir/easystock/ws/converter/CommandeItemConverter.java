@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.CommandeItemDto;
 public class CommandeItemConverter extends AbstractConverter<CommandeItem, CommandeItemDto, CommandeItemHistory> {
 
     @Autowired
-    private EtatCommandeConverter etatCommandeConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
+    @Autowired
+    private EtatCommandeConverter etatCommandeConverter ;
     @Autowired
     private CommandeConverter commandeConverter ;
     private boolean produit;
@@ -100,17 +100,17 @@ public class CommandeItemConverter extends AbstractConverter<CommandeItem, Comma
     }
 
 
-    public EtatCommandeConverter getEtatCommandeConverter(){
-        return this.etatCommandeConverter;
-    }
-    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
-        this.etatCommandeConverter = etatCommandeConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
+    }
+    public EtatCommandeConverter getEtatCommandeConverter(){
+        return this.etatCommandeConverter;
+    }
+    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
+        this.etatCommandeConverter = etatCommandeConverter;
     }
     public CommandeConverter getCommandeConverter(){
         return this.commandeConverter;

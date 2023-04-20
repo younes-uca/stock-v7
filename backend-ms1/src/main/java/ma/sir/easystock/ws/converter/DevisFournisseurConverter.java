@@ -16,11 +16,11 @@ import ma.sir.easystock.ws.dto.DevisFournisseurDto;
 public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseur, DevisFournisseurDto, DevisFournisseurHistory> {
 
     @Autowired
-    private DevisItemFournisseurConverter devisItemFournisseurConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
     private FournisseurConverter fournisseurConverter ;
+    @Autowired
+    private DevisItemFournisseurConverter devisItemFournisseurConverter ;
     private boolean fournisseur;
     private boolean devisItemFournisseurs;
 
@@ -97,12 +97,6 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
     }
 
 
-    public DevisItemFournisseurConverter getDevisItemFournisseurConverter(){
-        return this.devisItemFournisseurConverter;
-    }
-    public void setDevisItemFournisseurConverter(DevisItemFournisseurConverter devisItemFournisseurConverter ){
-        this.devisItemFournisseurConverter = devisItemFournisseurConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
@@ -114,6 +108,12 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
     }
     public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
         this.fournisseurConverter = fournisseurConverter;
+    }
+    public DevisItemFournisseurConverter getDevisItemFournisseurConverter(){
+        return this.devisItemFournisseurConverter;
+    }
+    public void setDevisItemFournisseurConverter(DevisItemFournisseurConverter devisItemFournisseurConverter ){
+        this.devisItemFournisseurConverter = devisItemFournisseurConverter;
     }
     public boolean  isFournisseur(){
         return this.fournisseur;

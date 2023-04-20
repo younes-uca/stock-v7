@@ -20,6 +20,10 @@
                                             </p-dropdown>
                                             
                                         </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateProduit('Produit')" class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
 
                                         <div class="field col-12 md:col-6">
                                             <label for="3">{{'stockProduitQuantite' | translate}}}</label>
@@ -53,6 +57,7 @@
                 </div>
             </ng-template>
 
+                    <app-produit-create-admin></app-produit-create-admin>
 
 
     </p-dialog>

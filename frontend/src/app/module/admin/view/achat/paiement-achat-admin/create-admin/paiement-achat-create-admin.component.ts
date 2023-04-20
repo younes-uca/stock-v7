@@ -13,10 +13,10 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {PaiementAchatService} from 'src/app/controller/service/PaiementAchat.service';
 import {PaiementAchatDto} from 'src/app/controller/model/PaiementAchat.model';
 import {PaiementAchatCriteria} from 'src/app/controller/criteria/PaiementAchatCriteria.model';
-import {AchatDto} from 'src/app/controller/model/Achat.model';
-import {AchatService} from 'src/app/controller/service/Achat.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
+import {AchatDto} from 'src/app/controller/model/Achat.model';
+import {AchatService} from 'src/app/controller/service/Achat.service';
 @Component({
   selector: 'app-paiement-achat-create-admin',
   templateUrl: './paiement-achat-create-admin.component.html'
@@ -33,7 +33,7 @@ export class PaiementAchatCreateAdminComponent extends AbstractCreateController<
     constructor(private datePipe: DatePipe, private paiementAchatService: PaiementAchatService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private achatService: AchatService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private achatService: AchatService
     ) {
         super(datePipe, paiementAchatService, messageService, confirmationService, roleService, router, stringUtilService);
     }

@@ -13,10 +13,10 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {AvoirAchatService} from 'src/app/controller/service/AvoirAchat.service';
 import {AvoirAchatDto} from 'src/app/controller/model/AvoirAchat.model';
 import {AvoirAchatCriteria} from 'src/app/controller/criteria/AvoirAchatCriteria.model';
-import {AchatDto} from 'src/app/controller/model/Achat.model';
-import {AchatService} from 'src/app/controller/service/Achat.service';
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitService} from 'src/app/controller/service/Produit.service';
+import {AchatDto} from 'src/app/controller/model/Achat.model';
+import {AchatService} from 'src/app/controller/service/Achat.service';
 import {AvoirAchatItemDto} from 'src/app/controller/model/AvoirAchatItem.model';
 import {AvoirAchatItemService} from 'src/app/controller/service/AvoirAchatItem.service';
 @Component({
@@ -33,7 +33,7 @@ export class AvoirAchatCreateAdminComponent extends AbstractCreateController<Avo
     constructor(private datePipe: DatePipe, private avoirAchatService: AvoirAchatService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private achatService: AchatService, private produitService: ProduitService, private avoirAchatItemService: AvoirAchatItemService
+, private produitService: ProduitService, private achatService: AchatService, private avoirAchatItemService: AvoirAchatItemService
     ) {
         super(datePipe, avoirAchatService, messageService, confirmationService, roleService, router, stringUtilService);
     }
