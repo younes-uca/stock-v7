@@ -15,10 +15,10 @@ import {PaiementVenteDto} from 'src/app/controller/model/PaiementVente.model';
 import {PaiementVenteCriteria} from 'src/app/controller/criteria/PaiementVenteCriteria.model';
 
 
-import {VenteDto} from 'src/app/controller/model/Vente.model';
-import {VenteService} from 'src/app/controller/service/Vente.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
+import {VenteDto} from 'src/app/controller/model/Vente.model';
+import {VenteService} from 'src/app/controller/service/Vente.service';
 
 @Component({
   selector: 'app-paiement-vente-edit-admin',
@@ -38,7 +38,7 @@ export class PaiementVenteEditAdminComponent extends AbstractEditController<Paie
     constructor(private datePipe: DatePipe, private paiementVenteService: PaiementVenteService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private venteService: VenteService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private venteService: VenteService
     ) {
         super(datePipe, paiementVenteService, messageService, confirmationService, roleService, router, stringUtilService);
     }

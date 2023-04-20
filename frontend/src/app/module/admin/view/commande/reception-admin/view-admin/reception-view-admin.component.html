@@ -10,7 +10,7 @@
                     </div>
                     <div class="field col-12 md:col-6">
                         <label for="2">{{'Date reception' | translate}}</label>
-                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Date reception' | translate}}" [(ngModel)]="item.dateReception"></p-inputNumber>
+                        <p-calendar id="2" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date reception' | translate}}"  [(ngModel)]="item.dateReception" dateFormat="{{dateFormat}}"></p-calendar>
                     </div>
                     <div class="field col-12 md:col-6">
                         <label for="3">{{'Description' | translate}}</label>

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ma.sir.easystock.zynerator.util.ListUtil;
 
+import ma.sir.easystock.bean.core.Societe;
 
 import ma.sir.easystock.zynerator.util.StringUtil;
 import ma.sir.easystock.zynerator.converter.AbstractConverter;
@@ -39,8 +40,10 @@ public class StoreConverter extends AbstractConverter<Store, StoreDto, StoreHist
                 item.setLibelle(dto.getLibelle());
             if(StringUtil.isNotEmpty(dto.getReference()))
                 item.setReference(dto.getReference());
-            if(this.societe && dto.getSociete()!=null)
-                item.setSociete(societeConverter.toItem(dto.getSociete())) ;
+            if(dto.getSociete() != null && dto.getSociete().getId() != null){
+                item.setSociete(new Societe());
+                item.getSociete().setId(dto.getSociete().getId());
+            }
 
 
             if(this.magasins && ListUtil.isNotEmpty(dto.getMagasins()))

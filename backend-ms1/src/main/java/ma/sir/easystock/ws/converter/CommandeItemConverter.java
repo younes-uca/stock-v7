@@ -17,11 +17,11 @@ import ma.sir.easystock.ws.dto.CommandeItemDto;
 public class CommandeItemConverter extends AbstractConverter<CommandeItem, CommandeItemDto, CommandeItemHistory> {
 
     @Autowired
-    private CommandeConverter commandeConverter ;
+    private EtatCommandeConverter etatCommandeConverter ;
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
-    private EtatCommandeConverter etatCommandeConverter ;
+    private CommandeConverter commandeConverter ;
     private boolean produit;
     private boolean commande;
     private boolean etatCommande;
@@ -100,11 +100,11 @@ public class CommandeItemConverter extends AbstractConverter<CommandeItem, Comma
     }
 
 
-    public CommandeConverter getCommandeConverter(){
-        return this.commandeConverter;
+    public EtatCommandeConverter getEtatCommandeConverter(){
+        return this.etatCommandeConverter;
     }
-    public void setCommandeConverter(CommandeConverter commandeConverter ){
-        this.commandeConverter = commandeConverter;
+    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
+        this.etatCommandeConverter = etatCommandeConverter;
     }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
@@ -112,11 +112,11 @@ public class CommandeItemConverter extends AbstractConverter<CommandeItem, Comma
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
     }
-    public EtatCommandeConverter getEtatCommandeConverter(){
-        return this.etatCommandeConverter;
+    public CommandeConverter getCommandeConverter(){
+        return this.commandeConverter;
     }
-    public void setEtatCommandeConverter(EtatCommandeConverter etatCommandeConverter ){
-        this.etatCommandeConverter = etatCommandeConverter;
+    public void setCommandeConverter(CommandeConverter commandeConverter ){
+        this.commandeConverter = commandeConverter;
     }
     public boolean  isProduit(){
         return this.produit;

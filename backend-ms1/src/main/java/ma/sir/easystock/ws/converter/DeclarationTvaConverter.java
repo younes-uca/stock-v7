@@ -3,6 +3,7 @@ package  ma.sir.easystock.ws.converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import ma.sir.easystock.bean.core.Societe;
 
 import ma.sir.easystock.zynerator.util.StringUtil;
 import ma.sir.easystock.zynerator.converter.AbstractConverter;
@@ -15,13 +16,13 @@ import ma.sir.easystock.ws.dto.DeclarationTvaDto;
 public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, DeclarationTvaDto, DeclarationTvaHistory> {
 
     @Autowired
-    private TauxRetardTvaConverter tauxRetardTvaConverter ;
-    @Autowired
-    private SocieteConverter societeConverter ;
-    @Autowired
     private ComptableValidateurConverter comptableValidateurConverter ;
     @Autowired
+    private TauxRetardTvaConverter tauxRetardTvaConverter ;
+    @Autowired
     private ComptableTraitantConverter comptableTraitantConverter ;
+    @Autowired
+    private SocieteConverter societeConverter ;
     private boolean societe;
     private boolean tauxRetardTva;
     private boolean comptableTraitant;
@@ -53,8 +54,10 @@ public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, D
                 item.setDifferenceTva(dto.getDifferenceTva());
             if(StringUtil.isNotEmpty(dto.getMontantTva()))
                 item.setMontantTva(dto.getMontantTva());
-            if(this.societe && dto.getSociete()!=null)
-                item.setSociete(societeConverter.toItem(dto.getSociete())) ;
+            if(dto.getSociete() != null && dto.getSociete().getId() != null){
+                item.setSociete(new Societe());
+                item.getSociete().setId(dto.getSociete().getId());
+            }
 
             if(this.tauxRetardTva && dto.getTauxRetardTva()!=null)
                 item.setTauxRetardTva(tauxRetardTvaConverter.toItem(dto.getTauxRetardTva())) ;
@@ -120,29 +123,29 @@ public class DeclarationTvaConverter extends AbstractConverter<DeclarationTva, D
     }
 
 
-    public TauxRetardTvaConverter getTauxRetardTvaConverter(){
-        return this.tauxRetardTvaConverter;
-    }
-    public void setTauxRetardTvaConverter(TauxRetardTvaConverter tauxRetardTvaConverter ){
-        this.tauxRetardTvaConverter = tauxRetardTvaConverter;
-    }
-    public SocieteConverter getSocieteConverter(){
-        return this.societeConverter;
-    }
-    public void setSocieteConverter(SocieteConverter societeConverter ){
-        this.societeConverter = societeConverter;
-    }
     public ComptableValidateurConverter getComptableValidateurConverter(){
         return this.comptableValidateurConverter;
     }
     public void setComptableValidateurConverter(ComptableValidateurConverter comptableValidateurConverter ){
         this.comptableValidateurConverter = comptableValidateurConverter;
     }
+    public TauxRetardTvaConverter getTauxRetardTvaConverter(){
+        return this.tauxRetardTvaConverter;
+    }
+    public void setTauxRetardTvaConverter(TauxRetardTvaConverter tauxRetardTvaConverter ){
+        this.tauxRetardTvaConverter = tauxRetardTvaConverter;
+    }
     public ComptableTraitantConverter getComptableTraitantConverter(){
         return this.comptableTraitantConverter;
     }
     public void setComptableTraitantConverter(ComptableTraitantConverter comptableTraitantConverter ){
         this.comptableTraitantConverter = comptableTraitantConverter;
+    }
+    public SocieteConverter getSocieteConverter(){
+        return this.societeConverter;
+    }
+    public void setSocieteConverter(SocieteConverter societeConverter ){
+        this.societeConverter = societeConverter;
     }
     public boolean  isSociete(){
         return this.societe;

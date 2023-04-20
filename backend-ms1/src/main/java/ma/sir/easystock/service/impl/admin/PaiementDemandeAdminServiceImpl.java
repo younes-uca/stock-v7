@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.DemandeAdminService ;
 import ma.sir.easystock.service.facade.admin.ModePaiementAdminService ;
+import ma.sir.easystock.service.facade.admin.DemandeAdminService ;
 
 
 import java.util.List;
@@ -49,9 +49,9 @@ PaiementDemandeHistoryDao> implements PaiementDemandeAdminService {
     }
 
     @Autowired
-    private DemandeAdminService demandeService ;
-    @Autowired
     private ModePaiementAdminService modePaiementService ;
+    @Autowired
+    private DemandeAdminService demandeService ;
     public PaiementDemandeAdminServiceImpl(PaiementDemandeDao dao, PaiementDemandeHistoryDao historyDao) {
         super(dao, historyDao);
     }

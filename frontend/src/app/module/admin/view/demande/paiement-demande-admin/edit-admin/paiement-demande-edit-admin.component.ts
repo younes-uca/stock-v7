@@ -15,10 +15,10 @@ import {PaiementDemandeDto} from 'src/app/controller/model/PaiementDemande.model
 import {PaiementDemandeCriteria} from 'src/app/controller/criteria/PaiementDemandeCriteria.model';
 
 
-import {DemandeDto} from 'src/app/controller/model/Demande.model';
-import {DemandeService} from 'src/app/controller/service/Demande.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
+import {DemandeDto} from 'src/app/controller/model/Demande.model';
+import {DemandeService} from 'src/app/controller/service/Demande.service';
 
 @Component({
   selector: 'app-paiement-demande-edit-admin',
@@ -37,7 +37,7 @@ export class PaiementDemandeEditAdminComponent extends AbstractEditController<Pa
     constructor(private datePipe: DatePipe, private paiementDemandeService: PaiementDemandeService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private demandeService: DemandeService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private demandeService: DemandeService
     ) {
         super(datePipe, paiementDemandeService, messageService, confirmationService, roleService, router, stringUtilService);
     }

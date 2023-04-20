@@ -13,22 +13,22 @@ import {AchatService} from 'src/app/controller/service/Achat.service';
 import {AchatDto} from 'src/app/controller/model/Achat.model';
 import {AchatCriteria} from 'src/app/controller/criteria/AchatCriteria.model';
 
-import {StoreDto} from 'src/app/controller/model/Store.model';
-import {StoreService} from 'src/app/controller/service/Store.service';
-import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
-import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
 import {AvoirAchatDto} from 'src/app/controller/model/AvoirAchat.model';
 import {AvoirAchatService} from 'src/app/controller/service/AvoirAchat.service';
+import {AchatItemDto} from 'src/app/controller/model/AchatItem.model';
+import {AchatItemService} from 'src/app/controller/service/AchatItem.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {AvoirAchatItemDto} from 'src/app/controller/model/AvoirAchatItem.model';
 import {AvoirAchatItemService} from 'src/app/controller/service/AvoirAchatItem.service';
 import {PaiementAchatDto} from 'src/app/controller/model/PaiementAchat.model';
 import {PaiementAchatService} from 'src/app/controller/service/PaiementAchat.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
-import {AchatItemDto} from 'src/app/controller/model/AchatItem.model';
-import {AchatItemService} from 'src/app/controller/service/AchatItem.service';
+import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
+import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
 @Component({
   selector: 'app-achat-view-admin',
   templateUrl: './achat-view-admin.component.html'
@@ -45,7 +45,7 @@ export class AchatViewAdminComponent extends AbstractViewController<AchatDto, Ac
     constructor(private datePipe: DatePipe, private achatService: AchatService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private storeService: StoreService, private fournisseurService: FournisseurService, private avoirAchatService: AvoirAchatService, private produitService: ProduitService, private achatItemService: AchatItemService, private paiementAchatService: PaiementAchatService, private modePaiementService: ModePaiementService
+, private paiementAchatService: PaiementAchatService, private modePaiementService: ModePaiementService, private avoirAchatService: AvoirAchatService, private achatItemService: AchatItemService, private produitService: ProduitService, private fournisseurService: FournisseurService, private storeService: StoreService
     ){
         super(datePipe, achatService, messageService, roleService, router, stringUtilService);
     }

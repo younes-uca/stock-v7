@@ -15,16 +15,16 @@ import {ReceptionDto} from 'src/app/controller/model/Reception.model';
 import {ReceptionCriteria} from 'src/app/controller/criteria/ReceptionCriteria.model';
 
 
+import {ReceptionItemDto} from 'src/app/controller/model/ReceptionItem.model';
+import {ReceptionItemService} from 'src/app/controller/service/ReceptionItem.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {EtatReceptionDto} from 'src/app/controller/model/EtatReception.model';
 import {EtatReceptionService} from 'src/app/controller/service/EtatReception.service';
 import {CommandeDto} from 'src/app/controller/model/Commande.model';
 import {CommandeService} from 'src/app/controller/service/Commande.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {MagasinDto} from 'src/app/controller/model/Magasin.model';
 import {MagasinService} from 'src/app/controller/service/Magasin.service';
-import {ReceptionItemDto} from 'src/app/controller/model/ReceptionItem.model';
-import {ReceptionItemService} from 'src/app/controller/service/ReceptionItem.service';
 
 @Component({
   selector: 'app-reception-edit-admin',
@@ -44,7 +44,7 @@ export class ReceptionEditAdminComponent extends AbstractEditController<Receptio
     constructor(private datePipe: DatePipe, private receptionService: ReceptionService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private etatReceptionService: EtatReceptionService, private commandeService: CommandeService, private produitService: ProduitService, private magasinService: MagasinService, private receptionItemService: ReceptionItemService
+, private receptionItemService: ReceptionItemService, private produitService: ProduitService, private etatReceptionService: EtatReceptionService, private commandeService: CommandeService, private magasinService: MagasinService
     ) {
         super(datePipe, receptionService, messageService, confirmationService, roleService, router, stringUtilService);
     }

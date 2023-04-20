@@ -3,8 +3,11 @@ package ma.sir.easystock.bean.core;
 import java.util.Objects;
 import java.util.List;
 
+import java.time.LocalDateTime;
 
 
+import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 
@@ -24,7 +27,7 @@ public class Reception   extends AuditBusinessObject     {
 
     private Long id;
 
-    private LocaleDateTime dateReception ;
+    private LocalDateTime dateReception ;
     @Column(length = 500)
     private String description;
 
@@ -58,10 +61,10 @@ public class Reception   extends AuditBusinessObject     {
     public void setCommande(Commande commande){
         this.commande = commande;
     }
-    public LocaleDateTime getDateReception(){
+    public LocalDateTime getDateReception(){
         return this.dateReception;
     }
-    public void setDateReception(LocaleDateTime dateReception){
+    public void setDateReception(LocalDateTime dateReception){
         this.dateReception = dateReception;
     }
     public String getDescription(){

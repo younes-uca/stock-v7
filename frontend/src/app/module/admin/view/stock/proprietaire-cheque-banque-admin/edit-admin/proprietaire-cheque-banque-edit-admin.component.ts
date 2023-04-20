@@ -15,10 +15,10 @@ import {ProprietaireChequeBanqueDto} from 'src/app/controller/model/Proprietaire
 import {ProprietaireChequeBanqueCriteria} from 'src/app/controller/criteria/ProprietaireChequeBanqueCriteria.model';
 
 
-import {ProprietaireChequeDto} from 'src/app/controller/model/ProprietaireCheque.model';
-import {ProprietaireChequeService} from 'src/app/controller/service/ProprietaireCheque.service';
 import {BanqueDto} from 'src/app/controller/model/Banque.model';
 import {BanqueService} from 'src/app/controller/service/Banque.service';
+import {ProprietaireChequeDto} from 'src/app/controller/model/ProprietaireCheque.model';
+import {ProprietaireChequeService} from 'src/app/controller/service/ProprietaireCheque.service';
 
 @Component({
   selector: 'app-proprietaire-cheque-banque-edit-admin',
@@ -38,7 +38,7 @@ export class ProprietaireChequeBanqueEditAdminComponent extends AbstractEditCont
     constructor(private datePipe: DatePipe, private proprietaireChequeBanqueService: ProprietaireChequeBanqueService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private proprietaireChequeService: ProprietaireChequeService, private banqueService: BanqueService
+, private banqueService: BanqueService, private proprietaireChequeService: ProprietaireChequeService
     ) {
         super(datePipe, proprietaireChequeBanqueService, messageService, confirmationService, roleService, router, stringUtilService);
     }

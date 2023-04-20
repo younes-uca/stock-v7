@@ -84,7 +84,7 @@ export class ReceptionListAdminComponent extends AbstractListController<Receptio
         this.exportData = this.items.map(e => {
             return {
                 'Commande': e.commande?.reference ,
-                 'Date reception': e.dateReception ,
+                'Date reception': this.datePipe.transform(e.dateReception , 'dd/MM/yyyy hh:mm'),
                  'Description': e.description ,
                 'Etat reception': e.etatReception?.libelle ,
             }
@@ -92,7 +92,8 @@ export class ReceptionListAdminComponent extends AbstractListController<Receptio
 
         this.criteriaData = [{
         //'Commande': this.criteria.commande?.reference ? this.criteria.commande?.reference : environment.emptyForExport ,
-            'Date reception': this.criteria.dateReception ? this.criteria.dateReception : environment.emptyForExport ,
+            'Date reception Min': this.criteria.dateReceptionFrom ? this.datePipe.transform(this.criteria.dateReceptionFrom , this.dateFormat) : environment.emptyForExport ,
+            'Date reception Max': this.criteria.dateReceptionTo ? this.datePipe.transform(this.criteria.dateReceptionTo , this.dateFormat) : environment.emptyForExport ,
             'Description': this.criteria.description ? this.criteria.description : environment.emptyForExport ,
         //'Etat reception': this.criteria.etatReception?.libelle ? this.criteria.etatReception?.libelle : environment.emptyForExport ,
         }];

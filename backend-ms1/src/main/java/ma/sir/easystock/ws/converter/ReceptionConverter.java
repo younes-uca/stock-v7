@@ -17,15 +17,15 @@ import ma.sir.easystock.ws.dto.ReceptionDto;
 public class ReceptionConverter extends AbstractConverter<Reception, ReceptionDto, ReceptionHistory> {
 
     @Autowired
+    private ReceptionItemConverter receptionItemConverter ;
+    @Autowired
+    private ProduitConverter produitConverter ;
+    @Autowired
     private EtatReceptionConverter etatReceptionConverter ;
     @Autowired
     private CommandeConverter commandeConverter ;
     @Autowired
-    private ProduitConverter produitConverter ;
-    @Autowired
     private MagasinConverter magasinConverter ;
-    @Autowired
-    private ReceptionItemConverter receptionItemConverter ;
     private boolean commande;
     private boolean etatReception;
     private boolean receptionItems;
@@ -44,7 +44,7 @@ public class ReceptionConverter extends AbstractConverter<Reception, ReceptionDt
             if(StringUtil.isNotEmpty(dto.getId()))
                 item.setId(dto.getId());
             if(StringUtil.isNotEmpty(dto.getDateReception()))
-                item.setDateReception(dto.getDateReception());
+                item.setDateReception(DateUtil.stringEnToDate(dto.getDateReception()));
             if(StringUtil.isNotEmpty(dto.getDescription()))
                 item.setDescription(dto.getDescription());
             if(dto.getCommande() != null && dto.getCommande().getId() != null){
@@ -71,8 +71,8 @@ public class ReceptionConverter extends AbstractConverter<Reception, ReceptionDt
             ReceptionDto dto = new ReceptionDto();
             if(StringUtil.isNotEmpty(item.getId()))
                 dto.setId(item.getId());
-            if(StringUtil.isNotEmpty(item.getDateReception()))
-                dto.setDateReception(item.getDateReception());
+            if(item.getDateReception()!=null)
+                dto.setDateReception(DateUtil.dateTimeToString(item.getDateReception()));
             if(StringUtil.isNotEmpty(item.getDescription()))
                 dto.setDescription(item.getDescription());
         if(this.commande && item.getCommande()!=null) {
@@ -104,6 +104,18 @@ public class ReceptionConverter extends AbstractConverter<Reception, ReceptionDt
     }
 
 
+    public ReceptionItemConverter getReceptionItemConverter(){
+        return this.receptionItemConverter;
+    }
+    public void setReceptionItemConverter(ReceptionItemConverter receptionItemConverter ){
+        this.receptionItemConverter = receptionItemConverter;
+    }
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
+    }
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
+    }
     public EtatReceptionConverter getEtatReceptionConverter(){
         return this.etatReceptionConverter;
     }
@@ -116,23 +128,11 @@ public class ReceptionConverter extends AbstractConverter<Reception, ReceptionDt
     public void setCommandeConverter(CommandeConverter commandeConverter ){
         this.commandeConverter = commandeConverter;
     }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
-    }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
-    }
     public MagasinConverter getMagasinConverter(){
         return this.magasinConverter;
     }
     public void setMagasinConverter(MagasinConverter magasinConverter ){
         this.magasinConverter = magasinConverter;
-    }
-    public ReceptionItemConverter getReceptionItemConverter(){
-        return this.receptionItemConverter;
-    }
-    public void setReceptionItemConverter(ReceptionItemConverter receptionItemConverter ){
-        this.receptionItemConverter = receptionItemConverter;
     }
     public boolean  isCommande(){
         return this.commande;

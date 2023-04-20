@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 public class DevisFournisseurDto  extends AuditBaseDto {
 
     private String reference  ;
-    private LocalDate dateDevis  ;
+    private String dateDevis ;
     private BigDecimal total  ;
     private String description  ;
 
@@ -40,10 +40,11 @@ public class DevisFournisseurDto  extends AuditBaseDto {
     }
 
     @Log
-    public LocalDate getDateDevis(){
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
+    public String getDateDevis(){
         return this.dateDevis;
     }
-    public void setDateDevis(LocalDate dateDevis){
+    public void setDateDevis(String dateDevis){
         this.dateDevis = dateDevis;
     }
 

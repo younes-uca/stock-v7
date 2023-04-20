@@ -1,5 +1,4 @@
 import {SocieteDto} from './Societe.model';
-import {StoreDto} from './Store.model';
 import {BaseDto} from 'src/app/zynerator/dto/BaseDto.model';
 
 
@@ -24,7 +23,6 @@ export class AbonneDto  extends BaseDto{
     public ice: string;
     public dateCreationMax: string ;
     public dateCreationMin: string ;
-     public stores: Array<StoreDto>;
      public societes: Array<SocieteDto>;
 
 }

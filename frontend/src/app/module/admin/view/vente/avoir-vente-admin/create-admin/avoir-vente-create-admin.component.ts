@@ -13,12 +13,12 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {AvoirVenteService} from 'src/app/controller/service/AvoirVente.service';
 import {AvoirVenteDto} from 'src/app/controller/model/AvoirVente.model';
 import {AvoirVenteCriteria} from 'src/app/controller/criteria/AvoirVenteCriteria.model';
-import {AvoirVenteItemDto} from 'src/app/controller/model/AvoirVenteItem.model';
-import {AvoirVenteItemService} from 'src/app/controller/service/AvoirVenteItem.service';
-import {VenteDto} from 'src/app/controller/model/Vente.model';
-import {VenteService} from 'src/app/controller/service/Vente.service';
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitService} from 'src/app/controller/service/Produit.service';
+import {VenteDto} from 'src/app/controller/model/Vente.model';
+import {VenteService} from 'src/app/controller/service/Vente.service';
+import {AvoirVenteItemDto} from 'src/app/controller/model/AvoirVenteItem.model';
+import {AvoirVenteItemService} from 'src/app/controller/service/AvoirVenteItem.service';
 @Component({
   selector: 'app-avoir-vente-create-admin',
   templateUrl: './avoir-vente-create-admin.component.html'
@@ -33,7 +33,7 @@ export class AvoirVenteCreateAdminComponent extends AbstractCreateController<Avo
     constructor(private datePipe: DatePipe, private avoirVenteService: AvoirVenteService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private avoirVenteItemService: AvoirVenteItemService, private venteService: VenteService, private produitService: ProduitService
+, private produitService: ProduitService, private venteService: VenteService, private avoirVenteItemService: AvoirVenteItemService
     ) {
         super(datePipe, avoirVenteService, messageService, confirmationService, roleService, router, stringUtilService);
     }

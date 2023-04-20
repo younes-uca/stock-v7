@@ -17,15 +17,15 @@ import ma.sir.easystock.ws.dto.ProduitDto;
 public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, ProduitHistory> {
 
     @Autowired
+    private StockProduitConverter stockProduitConverter ;
+    @Autowired
     private StoreConverter storeConverter ;
-    @Autowired
-    private UniteMesureConverter uniteMesureConverter ;
-    @Autowired
-    private MarqueConverter marqueConverter ;
     @Autowired
     private CategorieProduitConverter categorieProduitConverter ;
     @Autowired
-    private StockProduitConverter stockProduitConverter ;
+    private MarqueConverter marqueConverter ;
+    @Autowired
+    private UniteMesureConverter uniteMesureConverter ;
     @Autowired
     private MagasinConverter magasinConverter ;
     private boolean categorieProduit;
@@ -146,23 +146,17 @@ public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, Pro
     }
 
 
+    public StockProduitConverter getStockProduitConverter(){
+        return this.stockProduitConverter;
+    }
+    public void setStockProduitConverter(StockProduitConverter stockProduitConverter ){
+        this.stockProduitConverter = stockProduitConverter;
+    }
     public StoreConverter getStoreConverter(){
         return this.storeConverter;
     }
     public void setStoreConverter(StoreConverter storeConverter ){
         this.storeConverter = storeConverter;
-    }
-    public UniteMesureConverter getUniteMesureConverter(){
-        return this.uniteMesureConverter;
-    }
-    public void setUniteMesureConverter(UniteMesureConverter uniteMesureConverter ){
-        this.uniteMesureConverter = uniteMesureConverter;
-    }
-    public MarqueConverter getMarqueConverter(){
-        return this.marqueConverter;
-    }
-    public void setMarqueConverter(MarqueConverter marqueConverter ){
-        this.marqueConverter = marqueConverter;
     }
     public CategorieProduitConverter getCategorieProduitConverter(){
         return this.categorieProduitConverter;
@@ -170,11 +164,17 @@ public class ProduitConverter extends AbstractConverter<Produit, ProduitDto, Pro
     public void setCategorieProduitConverter(CategorieProduitConverter categorieProduitConverter ){
         this.categorieProduitConverter = categorieProduitConverter;
     }
-    public StockProduitConverter getStockProduitConverter(){
-        return this.stockProduitConverter;
+    public MarqueConverter getMarqueConverter(){
+        return this.marqueConverter;
     }
-    public void setStockProduitConverter(StockProduitConverter stockProduitConverter ){
-        this.stockProduitConverter = stockProduitConverter;
+    public void setMarqueConverter(MarqueConverter marqueConverter ){
+        this.marqueConverter = marqueConverter;
+    }
+    public UniteMesureConverter getUniteMesureConverter(){
+        return this.uniteMesureConverter;
+    }
+    public void setUniteMesureConverter(UniteMesureConverter uniteMesureConverter ){
+        this.uniteMesureConverter = uniteMesureConverter;
     }
     public MagasinConverter getMagasinConverter(){
         return this.magasinConverter;

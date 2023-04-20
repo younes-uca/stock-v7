@@ -15,17 +15,23 @@ import {SocieteCriteria} from 'src/app/controller/criteria/SocieteCriteria.model
 
 import {AbonneDto} from 'src/app/controller/model/Abonne.model';
 import {AbonneService} from 'src/app/controller/service/Abonne.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
+import {MagasinDto} from 'src/app/controller/model/Magasin.model';
+import {MagasinService} from 'src/app/controller/service/Magasin.service';
 @Component({
   selector: 'app-societe-view-admin',
   templateUrl: './societe-view-admin.component.html'
 })
 export class SocieteViewAdminComponent extends AbstractViewController<SocieteDto, SocieteCriteria, SocieteService> implements OnInit {
 
+    stores = new StoreDto();
+    storess: Array<StoreDto> = [];
 
     constructor(private datePipe: DatePipe, private societeService: SocieteService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private abonneService: AbonneService
+, private abonneService: AbonneService, private storeService: StoreService
     ){
         super(datePipe, societeService, messageService, roleService, router, stringUtilService);
     }

@@ -3,14 +3,16 @@ package  ma.sir.easystock.dao.criteria.core;
 
 import ma.sir.easystock.zynerator.criteria.BaseCriteria;
 import java.util.List;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class DevisFournisseurCriteria extends  BaseCriteria  {
 
     private String reference;
     private String referenceLike;
-    private LocalDate dateDevis;
-    private LocalDate dateDevisFrom;
-    private LocalDate dateDevisTo;
+    private LocalDateTime dateDevis;
+    private LocalDateTime dateDevisFrom;
+    private LocalDateTime dateDevisTo;
     private String total;
     private String totalMin;
     private String totalMax;
@@ -36,22 +38,22 @@ public class DevisFournisseurCriteria extends  BaseCriteria  {
         this.referenceLike = referenceLike;
     }
 
-    public LocalDate getDateDevis(){
+    public LocalDateTime getDateDevis(){
         return this.dateDevis;
     }
-    public void setDateDevis(LocalDate dateDevis){
+    public void setDateDevis(LocalDateTime dateDevis){
         this.dateDevis = dateDevis;
     }
-    public LocalDate getDateDevisFrom(){
+    public LocalDateTime getDateDevisFrom(){
         return this.dateDevisFrom;
     }
-    public void setDateDevisFrom(LocalDate dateDevisFrom){
+    public void setDateDevisFrom(LocalDateTime dateDevisFrom){
         this.dateDevisFrom = dateDevisFrom;
     }
-    public LocalDate getDateDevisTo(){
+    public LocalDateTime getDateDevisTo(){
         return this.dateDevisTo;
     }
-    public void setDateDevisTo(LocalDate dateDevisTo){
+    public void setDateDevisTo(LocalDateTime dateDevisTo){
         this.dateDevisTo = dateDevisTo;
     }
     public String getTotal(){

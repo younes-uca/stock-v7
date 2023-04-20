@@ -17,10 +17,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.SocieteAdminService ;
-import ma.sir.easystock.service.facade.admin.TauxIsAdminService ;
 import ma.sir.easystock.service.facade.admin.ComptableValidateurAdminService ;
 import ma.sir.easystock.service.facade.admin.ComptableTraitantAdminService ;
+import ma.sir.easystock.service.facade.admin.SocieteAdminService ;
+import ma.sir.easystock.service.facade.admin.TauxIsAdminService ;
 
 
 import java.util.List;
@@ -60,13 +60,13 @@ DeclarationIsHistoryDao> implements DeclarationIsAdminService {
     }
 
     @Autowired
-    private SocieteAdminService societeService ;
-    @Autowired
-    private TauxIsAdminService tauxIsService ;
-    @Autowired
     private ComptableValidateurAdminService comptableValidateurService ;
     @Autowired
     private ComptableTraitantAdminService comptableTraitantService ;
+    @Autowired
+    private SocieteAdminService societeService ;
+    @Autowired
+    private TauxIsAdminService tauxIsService ;
     public DeclarationIsAdminServiceImpl(DeclarationIsDao dao, DeclarationIsHistoryDao historyDao) {
         super(dao, historyDao);
     }

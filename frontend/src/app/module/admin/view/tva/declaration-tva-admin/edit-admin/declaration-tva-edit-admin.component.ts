@@ -15,14 +15,14 @@ import {DeclarationTvaDto} from 'src/app/controller/model/DeclarationTva.model';
 import {DeclarationTvaCriteria} from 'src/app/controller/criteria/DeclarationTvaCriteria.model';
 
 
-import {TauxRetardTvaDto} from 'src/app/controller/model/TauxRetardTva.model';
-import {TauxRetardTvaService} from 'src/app/controller/service/TauxRetardTva.service';
-import {SocieteDto} from 'src/app/controller/model/Societe.model';
-import {SocieteService} from 'src/app/controller/service/Societe.service';
 import {ComptableValidateurDto} from 'src/app/controller/model/ComptableValidateur.model';
 import {ComptableValidateurService} from 'src/app/controller/service/ComptableValidateur.service';
+import {TauxRetardTvaDto} from 'src/app/controller/model/TauxRetardTva.model';
+import {TauxRetardTvaService} from 'src/app/controller/service/TauxRetardTva.service';
 import {ComptableTraitantDto} from 'src/app/controller/model/ComptableTraitant.model';
 import {ComptableTraitantService} from 'src/app/controller/service/ComptableTraitant.service';
+import {SocieteDto} from 'src/app/controller/model/Societe.model';
+import {SocieteService} from 'src/app/controller/service/Societe.service';
 
 @Component({
   selector: 'app-declaration-tva-edit-admin',
@@ -39,7 +39,7 @@ export class DeclarationTvaEditAdminComponent extends AbstractEditController<Dec
     constructor(private datePipe: DatePipe, private declarationTvaService: DeclarationTvaService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private tauxRetardTvaService: TauxRetardTvaService, private societeService: SocieteService, private comptableValidateurService: ComptableValidateurService, private comptableTraitantService: ComptableTraitantService
+, private comptableValidateurService: ComptableValidateurService, private tauxRetardTvaService: TauxRetardTvaService, private comptableTraitantService: ComptableTraitantService, private societeService: SocieteService
     ) {
         super(datePipe, declarationTvaService, messageService, confirmationService, roleService, router, stringUtilService);
     }

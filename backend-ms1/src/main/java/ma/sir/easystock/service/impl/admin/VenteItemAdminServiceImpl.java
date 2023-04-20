@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.VenteAdminService ;
 import ma.sir.easystock.service.facade.admin.ProduitAdminService ;
+import ma.sir.easystock.service.facade.admin.VenteAdminService ;
 
 
 import java.util.List;
@@ -46,9 +46,9 @@ VenteItemHistoryDao> implements VenteItemAdminService {
     }
 
     @Autowired
-    private VenteAdminService venteService ;
-    @Autowired
     private ProduitAdminService produitService ;
+    @Autowired
+    private VenteAdminService venteService ;
     public VenteItemAdminServiceImpl(VenteItemDao dao, VenteItemHistoryDao historyDao) {
         super(dao, historyDao);
     }

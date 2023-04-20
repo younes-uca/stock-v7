@@ -97,6 +97,12 @@ public class SocieteRestAdmin  extends AbstractController<Societe, SocieteDto, S
     public int deleteByAbonneId(@PathVariable Long id){
         return service.deleteByAbonneId(id);
     }
+    @ApiOperation("Finds a societe and associated list by id")
+    @GetMapping("detail/id/{id}")
+    public ResponseEntity<SocieteDto> findWithAssociatedLists(@PathVariable Long id) {
+        return super.findWithAssociatedLists(id);
+    }
+
     @ApiOperation("Finds societes by criteria")
     @PostMapping("find-by-criteria")
     public ResponseEntity<List<SocieteDto>> findByCriteria(@RequestBody SocieteCriteria criteria) throws Exception {

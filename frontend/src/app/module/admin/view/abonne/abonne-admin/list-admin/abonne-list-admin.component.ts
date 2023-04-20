@@ -11,7 +11,6 @@ import {DatePipe} from '@angular/common';
 
 
 import {SocieteDto} from 'src/app/controller/model/Societe.model';
-import {StoreDto} from 'src/app/controller/model/Store.model';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { AuthService } from 'src/app/zynerator/security/Auth.service';
 import { ExportService } from 'src/app/zynerator/util/Export.service';
@@ -71,9 +70,6 @@ export class AbonneListAdminComponent extends AbstractListController<AbonneDto, 
 
 
 	public initDuplicate(res: AbonneDto) {
-        if (res.stores != null) {
-             res.stores.forEach(d => { d.abonne = null; d.id = null; });
-        }
         if (res.societes != null) {
              res.societes.forEach(d => { d.abonne = null; d.id = null; });
         }

@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.DevisFournisseurAdminService ;
 import ma.sir.easystock.service.facade.admin.ProduitAdminService ;
+import ma.sir.easystock.service.facade.admin.DevisFournisseurAdminService ;
 
 
 import java.util.List;
@@ -46,9 +46,9 @@ DevisItemFournisseurHistoryDao> implements DevisItemFournisseurAdminService {
     }
 
     @Autowired
-    private DevisFournisseurAdminService devisFournisseurService ;
-    @Autowired
     private ProduitAdminService produitService ;
+    @Autowired
+    private DevisFournisseurAdminService devisFournisseurService ;
     public DevisItemFournisseurAdminServiceImpl(DevisItemFournisseurDao dao, DevisItemFournisseurHistoryDao historyDao) {
         super(dao, historyDao);
     }

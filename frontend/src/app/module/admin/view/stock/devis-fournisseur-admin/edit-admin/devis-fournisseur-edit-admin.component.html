@@ -14,9 +14,9 @@
 
                                         <div class="field col-12 md:col-6">
                                             <label for="2">{{'devisFournisseurDateDevis' | translate}}}</label>
-                                            <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="2"
-                                                           placeholder="{{'devisFournisseurDateDevis' | translate}}}" [(ngModel)]="item.dateDevis"  >
-                                            </p-inputNumber>
+                                            <p-calendar appendTo="body" id="2"   [showTime]="true" [showSeconds]="false" placeholder="{{'devisFournisseurDateDevis' | translate}}}"  [(ngModel)]="item.dateDevis"
+                                                    dateFormat="{{dateFormat}}"  >
+                                            </p-calendar>
                                             
                                         </div>
 

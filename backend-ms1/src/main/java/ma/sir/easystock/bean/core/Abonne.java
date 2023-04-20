@@ -60,7 +60,6 @@ public class Abonne   extends AuditBusinessObject     {
     private String ice;
 
 
-    private List<Store> stores ;
     private List<Societe> societes ;
 
     public Abonne(){
@@ -174,13 +173,6 @@ public class Abonne   extends AuditBusinessObject     {
     }
     public void setIce(String ice){
         this.ice = ice;
-    }
-    @OneToMany
-    public List<Store> getStores(){
-        return this.stores;
-    }
-    public void setStores(List<Store> stores){
-        this.stores = stores;
     }
     @OneToMany(mappedBy = "abonne")
     public List<Societe> getSocietes(){

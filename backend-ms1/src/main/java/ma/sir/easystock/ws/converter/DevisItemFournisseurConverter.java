@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.DevisItemFournisseurDto;
 public class DevisItemFournisseurConverter extends AbstractConverter<DevisItemFournisseur, DevisItemFournisseurDto, DevisItemFournisseurHistory> {
 
     @Autowired
-    private DevisFournisseurConverter devisFournisseurConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
+    @Autowired
+    private DevisFournisseurConverter devisFournisseurConverter ;
     private boolean produit;
     private boolean devisFournisseur;
 
@@ -90,17 +90,17 @@ public class DevisItemFournisseurConverter extends AbstractConverter<DevisItemFo
     }
 
 
-    public DevisFournisseurConverter getDevisFournisseurConverter(){
-        return this.devisFournisseurConverter;
-    }
-    public void setDevisFournisseurConverter(DevisFournisseurConverter devisFournisseurConverter ){
-        this.devisFournisseurConverter = devisFournisseurConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
+    }
+    public DevisFournisseurConverter getDevisFournisseurConverter(){
+        return this.devisFournisseurConverter;
+    }
+    public void setDevisFournisseurConverter(DevisFournisseurConverter devisFournisseurConverter ){
+        this.devisFournisseurConverter = devisFournisseurConverter;
     }
     public boolean  isProduit(){
         return this.produit;

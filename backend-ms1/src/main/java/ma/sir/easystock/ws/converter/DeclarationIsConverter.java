@@ -3,6 +3,7 @@ package  ma.sir.easystock.ws.converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import ma.sir.easystock.bean.core.Societe;
 
 import ma.sir.easystock.zynerator.util.StringUtil;
 import ma.sir.easystock.zynerator.converter.AbstractConverter;
@@ -15,13 +16,13 @@ import ma.sir.easystock.ws.dto.DeclarationIsDto;
 public class DeclarationIsConverter extends AbstractConverter<DeclarationIs, DeclarationIsDto, DeclarationIsHistory> {
 
     @Autowired
-    private SocieteConverter societeConverter ;
-    @Autowired
-    private TauxIsConverter tauxIsConverter ;
-    @Autowired
     private ComptableValidateurConverter comptableValidateurConverter ;
     @Autowired
     private ComptableTraitantConverter comptableTraitantConverter ;
+    @Autowired
+    private SocieteConverter societeConverter ;
+    @Autowired
+    private TauxIsConverter tauxIsConverter ;
     private boolean societe;
     private boolean tauxIs;
     private boolean comptableTraitant;
@@ -55,8 +56,10 @@ public class DeclarationIsConverter extends AbstractConverter<DeclarationIs, Dec
                 item.setMontantImpot(dto.getMontantImpot());
             if(StringUtil.isNotEmpty(dto.getResultatApresImpot()))
                 item.setResultatApresImpot(dto.getResultatApresImpot());
-            if(this.societe && dto.getSociete()!=null)
-                item.setSociete(societeConverter.toItem(dto.getSociete())) ;
+            if(dto.getSociete() != null && dto.getSociete().getId() != null){
+                item.setSociete(new Societe());
+                item.getSociete().setId(dto.getSociete().getId());
+            }
 
             if(this.tauxIs && dto.getTauxIs()!=null)
                 item.setTauxIs(tauxIsConverter.toItem(dto.getTauxIs())) ;
@@ -124,18 +127,6 @@ public class DeclarationIsConverter extends AbstractConverter<DeclarationIs, Dec
     }
 
 
-    public SocieteConverter getSocieteConverter(){
-        return this.societeConverter;
-    }
-    public void setSocieteConverter(SocieteConverter societeConverter ){
-        this.societeConverter = societeConverter;
-    }
-    public TauxIsConverter getTauxIsConverter(){
-        return this.tauxIsConverter;
-    }
-    public void setTauxIsConverter(TauxIsConverter tauxIsConverter ){
-        this.tauxIsConverter = tauxIsConverter;
-    }
     public ComptableValidateurConverter getComptableValidateurConverter(){
         return this.comptableValidateurConverter;
     }
@@ -147,6 +138,18 @@ public class DeclarationIsConverter extends AbstractConverter<DeclarationIs, Dec
     }
     public void setComptableTraitantConverter(ComptableTraitantConverter comptableTraitantConverter ){
         this.comptableTraitantConverter = comptableTraitantConverter;
+    }
+    public SocieteConverter getSocieteConverter(){
+        return this.societeConverter;
+    }
+    public void setSocieteConverter(SocieteConverter societeConverter ){
+        this.societeConverter = societeConverter;
+    }
+    public TauxIsConverter getTauxIsConverter(){
+        return this.tauxIsConverter;
+    }
+    public void setTauxIsConverter(TauxIsConverter tauxIsConverter ){
+        this.tauxIsConverter = tauxIsConverter;
     }
     public boolean  isSociete(){
         return this.societe;

@@ -1,6 +1,7 @@
 package ma.sir.easystock.bean.core;
 
 import java.util.Objects;
+import java.util.List;
 
 
 
@@ -33,6 +34,7 @@ public class Societe   extends AuditBusinessObject     {
     private Abonne abonne ;
     
 
+    private List<Store> stores ;
 
     public Societe(){
         super();
@@ -67,6 +69,13 @@ public class Societe   extends AuditBusinessObject     {
     }
     public void setBloqued(Boolean bloqued){
         this.bloqued = bloqued;
+    }
+    @OneToMany(mappedBy = "societe")
+    public List<Store> getStores(){
+        return this.stores;
+    }
+    public void setStores(List<Store> stores){
+        this.stores = stores;
     }
     @ManyToOne(fetch = FetchType.LAZY)
     public Abonne getAbonne(){

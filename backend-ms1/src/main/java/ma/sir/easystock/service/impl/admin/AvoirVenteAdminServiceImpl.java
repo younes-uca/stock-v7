@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ma.sir.easystock.bean.core.AvoirVenteItem;
 
-import ma.sir.easystock.service.facade.admin.AvoirVenteItemAdminService ;
 import ma.sir.easystock.service.facade.admin.VenteAdminService ;
+import ma.sir.easystock.service.facade.admin.AvoirVenteItemAdminService ;
 
 
 import java.util.List;
@@ -76,9 +76,9 @@ AvoirVenteHistoryDao> implements AvoirVenteAdminService {
     }
 
     @Autowired
-    private AvoirVenteItemAdminService avoirVenteItemService ;
-    @Autowired
     private VenteAdminService venteService ;
+    @Autowired
+    private AvoirVenteItemAdminService avoirVenteItemService ;
     public AvoirVenteAdminServiceImpl(AvoirVenteDao dao, AvoirVenteHistoryDao historyDao) {
         super(dao, historyDao);
     }

@@ -8,6 +8,9 @@ export class DevisFournisseurCriteria  extends   BaseCriteria  {
     public id: number;
     public reference: string;
     public referenceLike: string;
+    public dateDevis: Date;
+    public dateDevisFrom: Date;
+    public dateDevisTo: Date;
      public total: number;
      public totalMin: number;
      public totalMax: number;

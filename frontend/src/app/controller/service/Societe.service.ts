@@ -14,6 +14,7 @@ import {SocieteCriteria} from '../criteria/SocieteCriteria.model';
 import {AbstractService} from 'src/app/zynerator/service/AbstractService';
 
 import {AbonneDto} from '../model/Abonne.model';
+import {StoreDto} from '../model/Store.model';
 
 @Injectable({
   providedIn: 'root'

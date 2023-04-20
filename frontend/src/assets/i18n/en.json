@@ -139,6 +139,8 @@
     "societeIce": "Ice",
     "societeSiege": "Siege",
     "societeBloqued": "Bloqued",
+    "societeStores": "Stores",
+    "Stores": "Stores",
     "societeAbonne": "Abonne",
 
     "tauxRetardTvaTabPan": "Taux retard tva",
@@ -258,8 +260,6 @@
     "abonneCnss": "Cnss",
     "abonneIfisc": "Ifisc",
     "abonneIce": "Ice",
-    "abonneStores": "Stores",
-    "Stores": "Stores",
     "abonneSocietes": "Societes",
     "Societes": "Societes",
 

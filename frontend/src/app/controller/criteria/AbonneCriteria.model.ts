@@ -1,5 +1,4 @@
 import {SocieteCriteria} from './SocieteCriteria.model';
-import {StoreCriteria} from './StoreCriteria.model';
 import {BaseCriteria} from 'src/app/zynerator/criteria/BaseCriteria.model';
 
 
@@ -38,7 +37,6 @@ export class AbonneCriteria  extends   BaseCriteria  {
     public ifiscLike: string;
     public ice: string;
     public iceLike: string;
-      public stores: Array<StoreCriteria>;
       public societes: Array<SocieteCriteria>;
 
 }

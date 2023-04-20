@@ -3,8 +3,8 @@ package ma.sir.easystock.bean.core;
 import java.util.Objects;
 import java.util.List;
 
+import java.time.LocalDateTime;
 
-import java.time.LocalDate;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -30,7 +30,7 @@ public class DevisFournisseur   extends AuditBusinessObject     {
 
     @Column(length = 500)
     private String reference;
-    private LocalDate dateDevis ;
+    private LocalDateTime dateDevis ;
     private BigDecimal total = BigDecimal.ZERO;
     @Column(length = 500)
     private String description;
@@ -62,10 +62,10 @@ public class DevisFournisseur   extends AuditBusinessObject     {
     public void setReference(String reference){
         this.reference = reference;
     }
-    public LocalDate getDateDevis(){
+    public LocalDateTime getDateDevis(){
         return this.dateDevis;
     }
-    public void setDateDevis(LocalDate dateDevis){
+    public void setDateDevis(LocalDateTime dateDevis){
         this.dateDevis = dateDevis;
     }
     public BigDecimal getTotal(){

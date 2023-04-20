@@ -3,11 +3,14 @@ package  ma.sir.easystock.dao.criteria.core;
 
 import ma.sir.easystock.zynerator.criteria.BaseCriteria;
 import java.util.List;
+import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class ReceptionCriteria extends  BaseCriteria  {
 
-    private String dateReception;
-    private String dateReceptionLike;
+    private LocalDateTime dateReception;
+    private LocalDateTime dateReceptionFrom;
+    private LocalDateTime dateReceptionTo;
     private String description;
     private String descriptionLike;
 
@@ -19,19 +22,24 @@ public class ReceptionCriteria extends  BaseCriteria  {
 
     public ReceptionCriteria(){}
 
-    public String getDateReception(){
+    public LocalDateTime getDateReception(){
         return this.dateReception;
     }
-    public void setDateReception(String dateReception){
+    public void setDateReception(LocalDateTime dateReception){
         this.dateReception = dateReception;
     }
-    public String getDateReceptionLike(){
-        return this.dateReceptionLike;
+    public LocalDateTime getDateReceptionFrom(){
+        return this.dateReceptionFrom;
     }
-    public void setDateReceptionLike(String dateReceptionLike){
-        this.dateReceptionLike = dateReceptionLike;
+    public void setDateReceptionFrom(LocalDateTime dateReceptionFrom){
+        this.dateReceptionFrom = dateReceptionFrom;
     }
-
+    public LocalDateTime getDateReceptionTo(){
+        return this.dateReceptionTo;
+    }
+    public void setDateReceptionTo(LocalDateTime dateReceptionTo){
+        this.dateReceptionTo = dateReceptionTo;
+    }
     public String getDescription(){
         return this.description;
     }

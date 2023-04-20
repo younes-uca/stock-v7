@@ -4,6 +4,7 @@ import ma.sir.easystock.zynerator.audit.Log;
 import ma.sir.easystock.zynerator.dto.AuditBaseDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.List;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -15,6 +16,7 @@ public class SocieteDto  extends AuditBaseDto {
 
     private AbonneDto abonne ;
 
+    private List<StoreDto> stores ;
 
 
     public SocieteDto(){
@@ -58,5 +60,12 @@ public class SocieteDto  extends AuditBaseDto {
 
 
 
+    public List<StoreDto> getStores(){
+        return this.stores;
+    }
+
+    public void setStores(List<StoreDto> stores){
+        this.stores = stores;
+    }
 
 }

@@ -13,47 +13,35 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {AbonneService} from 'src/app/controller/service/Abonne.service';
 import {AbonneDto} from 'src/app/controller/model/Abonne.model';
 import {AbonneCriteria} from 'src/app/controller/criteria/AbonneCriteria.model';
-import {StoreDto} from 'src/app/controller/model/Store.model';
-import {StoreService} from 'src/app/controller/service/Store.service';
 import {SocieteDto} from 'src/app/controller/model/Societe.model';
 import {SocieteService} from 'src/app/controller/service/Societe.service';
-import {MagasinDto} from 'src/app/controller/model/Magasin.model';
-import {MagasinService} from 'src/app/controller/service/Magasin.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
 @Component({
   selector: 'app-abonne-create-admin',
   templateUrl: './abonne-create-admin.component.html'
 })
 export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneDto, AbonneCriteria, AbonneService>  implements OnInit {
 
-    private _storesElement = new StoreDto();
     private _societesElement = new SocieteDto();
 
 
    private _validAbonneCode = true;
-    private _validStoresLibelle = true;
-    private _validStoresReference = true;
     private _validSocietesIce = true;
 
     constructor(private datePipe: DatePipe, private abonneService: AbonneService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private storeService: StoreService, private societeService: SocieteService
+, private societeService: SocieteService
     ) {
         super(datePipe, abonneService, messageService, confirmationService, roleService, router, stringUtilService);
     }
 
     ngOnInit(): void {
-        this.storesElement.societe = new SocieteDto();
-        this.societeService.findAll().subscribe((data) => this.societes = data);
 }
 
 
 
-    validateStores(){
-        this.errorMessages = new Array();
-        this.validateStoresLibelle();
-        this.validateStoresReference();
-    }
     validateSocietes(){
         this.errorMessages = new Array();
         this.validateSocietesIce();
@@ -62,34 +50,9 @@ export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneD
 
     public setValidation(value: boolean){
         this.validAbonneCode = value;
-        this.validStoresLibelle = value;
-        this.validStoresReference = value;
         this.validSocietesIce = value;
     }
 
-    public addStores() {
-        if( this.item.stores == null )
-            this.item.stores = new Array<StoreDto>();
-       this.validateStores();
-       if (this.errorMessages.length === 0) {
-              this.item.stores.push({... this.storesElement});
-              this.storesElement = new StoreDto();
-       }else{
-            this.messageService.add({severity: 'error',summary: 'Erreurs',detail: 'Merci de corrigé les erreurs suivant : ' + this.errorMessages});
-       }
-    }
-
-
-    public deleteStore(p: StoreDto) {
-        this.item.stores.forEach((element, index) => {
-            if (element === p) { this.item.stores.splice(index, 1); }
-        });
-    }
-
-    public editStore(p: StoreDto) {
-        this.storesElement = {... p};
-        this.activeTab = 0;
-    }
     public addSocietes() {
         if( this.item.societes == null )
             this.item.societes = new Array<SocieteDto>();
@@ -129,22 +92,6 @@ export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneD
         }
     }
 
-    public validateStoresLibelle(){
-        if (this.storesElement.libelle == null) {
-            this.errorMessages.push('Libelle de la store est  invalide');
-            this.validStoresLibelle = false;
-        } else {
-            this.validStoresLibelle = true;
-        }
-    }
-    public validateStoresReference(){
-        if (this.storesElement.reference == null) {
-            this.errorMessages.push('Reference de la store est  invalide');
-            this.validStoresReference = false;
-        } else {
-            this.validStoresReference = true;
-        }
-    }
     public validateSocietesIce(){
         if (this.societesElement.ice == null) {
             this.errorMessages.push('Ice de la societe est  invalide');
@@ -154,36 +101,7 @@ export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneD
         }
     }
 
-    public async openCreateSociete(societe: string) {
-    const isPermistted = await this.roleService.isPermitted('Societe', 'add');
-    if(isPermistted) {
-         this.societe = new SocieteDto();
-         this.createSocieteDialog = true;
-    }else{
-        this.messageService.add({
-        severity: 'error', summary: 'erreur', detail: 'problème de permission'
-        });
-     }
-    }
 
-    get societe(): SocieteDto {
-        return this.societeService.item;
-    }
-    set societe(value: SocieteDto) {
-        this.societeService.item = value;
-    }
-    get societes(): Array<SocieteDto> {
-        return this.societeService.items;
-    }
-    set societes(value: Array<SocieteDto>) {
-        this.societeService.items = value;
-    }
-    get createSocieteDialog(): boolean {
-       return this.societeService.createDialog;
-    }
-    set createSocieteDialog(value: boolean) {
-        this.societeService.createDialog= value;
-    }
 
 
 
@@ -195,18 +113,6 @@ export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneD
          this._validAbonneCode = value;
     }
 
-    get validStoresLibelle(): boolean {
-        return this._validStoresLibelle;
-    }
-    set validStoresLibelle(value: boolean) {
-        this._validStoresLibelle = value;
-    }
-    get validStoresReference(): boolean {
-        return this._validStoresReference;
-    }
-    set validStoresReference(value: boolean) {
-        this._validStoresReference = value;
-    }
     get validSocietesIce(): boolean {
         return this._validSocietesIce;
     }
@@ -214,15 +120,6 @@ export class AbonneCreateAdminComponent extends AbstractCreateController<AbonneD
         this._validSocietesIce = value;
     }
 
-    get storesElement(): StoreDto {
-        if( this._storesElement == null )
-            this._storesElement = new StoreDto();
-        return this._storesElement;
-    }
-
-    set storesElement(value: StoreDto) {
-        this._storesElement = value;
-    }
     get societesElement(): SocieteDto {
         if( this._societesElement == null )
             this._societesElement = new SocieteDto();

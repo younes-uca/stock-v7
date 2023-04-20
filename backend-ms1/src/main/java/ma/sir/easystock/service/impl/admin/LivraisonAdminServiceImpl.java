@@ -20,9 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ma.sir.easystock.bean.core.LivraisonItem;
 
+import ma.sir.easystock.service.facade.admin.DemandeAdminService ;
 import ma.sir.easystock.service.facade.admin.EtatLivraisonAdminService ;
 import ma.sir.easystock.service.facade.admin.ClientAdminService ;
-import ma.sir.easystock.service.facade.admin.DemandeAdminService ;
 
 
 import java.util.List;
@@ -89,11 +89,11 @@ LivraisonHistoryDao> implements LivraisonAdminService {
     }
 
     @Autowired
+    private DemandeAdminService demandeService ;
+    @Autowired
     private EtatLivraisonAdminService etatLivraisonService ;
     @Autowired
     private ClientAdminService clientService ;
-    @Autowired
-    private DemandeAdminService demandeService ;
     public LivraisonAdminServiceImpl(LivraisonDao dao, LivraisonHistoryDao historyDao) {
         super(dao, historyDao);
     }

@@ -17,11 +17,11 @@ import ma.sir.easystock.ws.dto.AchatDto;
 public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHistory> {
 
     @Autowired
-    private StoreConverter storeConverter ;
-    @Autowired
-    private FournisseurConverter fournisseurConverter ;
-    @Autowired
     private AvoirAchatConverter avoirAchatConverter ;
+    @Autowired
+    private AchatItemConverter achatItemConverter ;
+    @Autowired
+    private ProduitConverter produitConverter ;
     @Autowired
     private AvoirAchatItemConverter avoirAchatItemConverter ;
     @Autowired
@@ -29,9 +29,9 @@ public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHist
     @Autowired
     private ModePaiementConverter modePaiementConverter ;
     @Autowired
-    private ProduitConverter produitConverter ;
+    private FournisseurConverter fournisseurConverter ;
     @Autowired
-    private AchatItemConverter achatItemConverter ;
+    private StoreConverter storeConverter ;
     private boolean fournisseur;
     private boolean store;
     private boolean paiementAchats;
@@ -144,23 +144,23 @@ public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHist
     }
 
 
-    public StoreConverter getStoreConverter(){
-        return this.storeConverter;
-    }
-    public void setStoreConverter(StoreConverter storeConverter ){
-        this.storeConverter = storeConverter;
-    }
-    public FournisseurConverter getFournisseurConverter(){
-        return this.fournisseurConverter;
-    }
-    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
-        this.fournisseurConverter = fournisseurConverter;
-    }
     public AvoirAchatConverter getAvoirAchatConverter(){
         return this.avoirAchatConverter;
     }
     public void setAvoirAchatConverter(AvoirAchatConverter avoirAchatConverter ){
         this.avoirAchatConverter = avoirAchatConverter;
+    }
+    public AchatItemConverter getAchatItemConverter(){
+        return this.achatItemConverter;
+    }
+    public void setAchatItemConverter(AchatItemConverter achatItemConverter ){
+        this.achatItemConverter = achatItemConverter;
+    }
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
+    }
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
     }
     public AvoirAchatItemConverter getAvoirAchatItemConverter(){
         return this.avoirAchatItemConverter;
@@ -180,17 +180,17 @@ public class AchatConverter extends AbstractConverter<Achat, AchatDto, AchatHist
     public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
         this.modePaiementConverter = modePaiementConverter;
     }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
+    public FournisseurConverter getFournisseurConverter(){
+        return this.fournisseurConverter;
     }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
+    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
+        this.fournisseurConverter = fournisseurConverter;
     }
-    public AchatItemConverter getAchatItemConverter(){
-        return this.achatItemConverter;
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
     }
-    public void setAchatItemConverter(AchatItemConverter achatItemConverter ){
-        this.achatItemConverter = achatItemConverter;
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
     }
     public boolean  isFournisseur(){
         return this.fournisseur;

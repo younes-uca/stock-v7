@@ -75,7 +75,7 @@ export class DevisFournisseurListAdminComponent extends AbstractListController<D
         this.exportData = this.items.map(e => {
             return {
                  'Reference': e.reference ,
-                 'Date devis': e.dateDevis ,
+                'Date devis': this.datePipe.transform(e.dateDevis , 'dd/MM/yyyy hh:mm'),
                  'Total': e.total ,
                  'Description': e.description ,
                 'Fournisseur': e.fournisseur?.nom ,
@@ -84,7 +84,8 @@ export class DevisFournisseurListAdminComponent extends AbstractListController<D
 
         this.criteriaData = [{
             'Reference': this.criteria.reference ? this.criteria.reference : environment.emptyForExport ,
-            'Date devis': this.criteria.dateDevis ? this.criteria.dateDevis : environment.emptyForExport ,
+            'Date devis Min': this.criteria.dateDevisFrom ? this.datePipe.transform(this.criteria.dateDevisFrom , this.dateFormat) : environment.emptyForExport ,
+            'Date devis Max': this.criteria.dateDevisTo ? this.datePipe.transform(this.criteria.dateDevisTo , this.dateFormat) : environment.emptyForExport ,
             'Total Min': this.criteria.totalMin ? this.criteria.totalMin : environment.emptyForExport ,
             'Total Max': this.criteria.totalMax ? this.criteria.totalMax : environment.emptyForExport ,
             'Description': this.criteria.description ? this.criteria.description : environment.emptyForExport ,

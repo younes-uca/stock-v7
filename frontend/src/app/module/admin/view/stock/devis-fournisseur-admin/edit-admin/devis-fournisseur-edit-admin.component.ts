@@ -15,12 +15,12 @@ import {DevisFournisseurDto} from 'src/app/controller/model/DevisFournisseur.mod
 import {DevisFournisseurCriteria} from 'src/app/controller/criteria/DevisFournisseurCriteria.model';
 
 
-import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
-import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {DevisItemFournisseurDto} from 'src/app/controller/model/DevisItemFournisseur.model';
 import {DevisItemFournisseurService} from 'src/app/controller/service/DevisItemFournisseur.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
+import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
+import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
 
 @Component({
   selector: 'app-devis-fournisseur-edit-admin',
@@ -40,7 +40,7 @@ export class DevisFournisseurEditAdminComponent extends AbstractEditController<D
     constructor(private datePipe: DatePipe, private devisFournisseurService: DevisFournisseurService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private fournisseurService: FournisseurService, private produitService: ProduitService, private devisItemFournisseurService: DevisItemFournisseurService
+, private devisItemFournisseurService: DevisItemFournisseurService, private produitService: ProduitService, private fournisseurService: FournisseurService
     ) {
         super(datePipe, devisFournisseurService, messageService, confirmationService, roleService, router, stringUtilService);
     }

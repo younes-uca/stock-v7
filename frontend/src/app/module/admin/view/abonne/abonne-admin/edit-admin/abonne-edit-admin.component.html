@@ -123,72 +123,9 @@
                                             
                                         </div>
 
-
                         </div>
                     </p-tabPanel>
 
-                            <p-tabPanel header="{{'Stores' | translate}}">
-                                <p-tabView [(activeIndex)]="activeTab">
-                                    <p-tabPanel header="Création">
-                                        <div class="grid">
-                                                            <div class="field col-12 md:col-4">
-                                                                <label for="1">Libelle<span style="color: red;">*</span></label>
-                                                                <input appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="Libelle"
-                                                                       id="1" [(ngModel)]="storesElement.libelle"
-                                                                       autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validStoresLibelle}"  >
-                                                                <small class='p-error' *ngIf='!validStoresLibelle'>Libelle est obligatoire.</small>
-                                                            </div>
-                                                            <div class="field col-12 md:col-4">
-                                                                <label for="2">Reference<span style="color: red;">*</span></label>
-                                                                <input appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="Reference"
-                                                                       id="2" [(ngModel)]="storesElement.reference"
-                                                                       autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validStoresReference}"  >
-                                                                <small class='p-error' *ngIf='!validStoresReference'>Reference est obligatoire.</small>
-                                                            </div>
-                                                            <div class="field col-11 md:col-3">
-                                                                <label>Societe</label>
-                                                                <p-dropdown appendTo="body" [options]="societes" [(ngModel)]="storesElement.societe"
-                                                                        id="3"  [filter]="true" filterMatchMode="contains" [showClear]="true"
-                                                                        optionLabel="ice" placeholder="Societe"  >
-                                                                </p-dropdown>
-                                                                
-                                                            </div>
-                                                            <div class="col-1">
-                                                                <label></label>
-                                                                <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateSociete('Societe')"  class="p-button-success one-colonne-btn-success-align"></button>
-                                                            </div>
-                                                <div class="field col-12 md:col-1">
-                                                    <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addStores()"></button>
-                                                </div>
-                                        </div>
-                                    </p-tabPanel>
-                                    <p-tabPanel header="Liste {{item.stores?.length > 0 ? '(' + item.stores?.length + ')' : ''}}">
-                                            <div class="card">
-                                                <p-table [value]="item.stores" [scrollable]="true" scrollHeight="200px">
-                                                    <ng-template pTemplate="header">
-                                                        <tr>
-                                                                        <th>Libelle</th>
-                                                                        <th>Reference</th>
-                                                                        <th>Societe</th>
-                                                            <th>Actions</th>
-                                                        </tr>
-                                                    </ng-template>
-                                                    <ng-template pTemplate="body" let-p>
-                                                        <tr>
-                                                                        <td>{{p.libelle}}</td>
-                                                                        <td>{{p.reference}}</td>
-                                                                    <td>{{p.societe?.ice}}</td>
-                                                            <td>
-                                                                <button (click)="deleteStore(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
-                                                                <button (click)="editStore(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
-                                                            </td>
-                                                        </tr>
-                                                    </ng-template>
-                                                </p-table>
-                                            </div>
-                                    </p-tabPanel>
-                                </p-tabView>
-                            </p-tabPanel>
                             <p-tabPanel header="{{'Societes' | translate}}">
                                 <p-tabView [(activeIndex)]="activeTab">
                                     <p-tabPanel header="Création">
@@ -264,6 +201,5 @@
             </ng-template>
 
 
-                            <app-societe-create-admin></app-societe-create-admin>
 
     </p-dialog>

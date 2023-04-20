@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.ProprietaireChequeAdminService ;
 import ma.sir.easystock.service.facade.admin.BanqueAdminService ;
+import ma.sir.easystock.service.facade.admin.ProprietaireChequeAdminService ;
 
 
 import java.util.List;
@@ -46,9 +46,9 @@ ProprietaireChequeBanqueHistoryDao> implements ProprietaireChequeBanqueAdminServ
     }
 
     @Autowired
-    private ProprietaireChequeAdminService proprietaireChequeService ;
-    @Autowired
     private BanqueAdminService banqueService ;
+    @Autowired
+    private ProprietaireChequeAdminService proprietaireChequeService ;
     public ProprietaireChequeBanqueAdminServiceImpl(ProprietaireChequeBanqueDao dao, ProprietaireChequeBanqueHistoryDao historyDao) {
         super(dao, historyDao);
     }

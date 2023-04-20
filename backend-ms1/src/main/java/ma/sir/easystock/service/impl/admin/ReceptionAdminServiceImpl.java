@@ -20,9 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ma.sir.easystock.bean.core.ReceptionItem;
 
+import ma.sir.easystock.service.facade.admin.ReceptionItemAdminService ;
 import ma.sir.easystock.service.facade.admin.EtatReceptionAdminService ;
 import ma.sir.easystock.service.facade.admin.CommandeAdminService ;
-import ma.sir.easystock.service.facade.admin.ReceptionItemAdminService ;
 
 
 import java.util.List;
@@ -83,11 +83,11 @@ ReceptionHistoryDao> implements ReceptionAdminService {
     }
 
     @Autowired
+    private ReceptionItemAdminService receptionItemService ;
+    @Autowired
     private EtatReceptionAdminService etatReceptionService ;
     @Autowired
     private CommandeAdminService commandeService ;
-    @Autowired
-    private ReceptionItemAdminService receptionItemService ;
     public ReceptionAdminServiceImpl(ReceptionDao dao, ReceptionHistoryDao historyDao) {
         super(dao, historyDao);
     }

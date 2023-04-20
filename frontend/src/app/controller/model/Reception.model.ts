@@ -7,6 +7,7 @@ import {BaseDto} from 'src/app/zynerator/dto/BaseDto.model';
 export class ReceptionDto  extends BaseDto{
 
     public id: number;
+   public dateReception: Date;
     public description: string;
     public dateReceptionMax: string ;
     public dateReceptionMin: string ;

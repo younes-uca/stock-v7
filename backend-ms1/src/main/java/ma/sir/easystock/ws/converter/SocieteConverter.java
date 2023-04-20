@@ -2,6 +2,7 @@ package  ma.sir.easystock.ws.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ma.sir.easystock.zynerator.util.ListUtil;
 
 import ma.sir.easystock.bean.core.Abonne;
 
@@ -17,10 +18,16 @@ public class SocieteConverter extends AbstractConverter<Societe, SocieteDto, Soc
 
     @Autowired
     private AbonneConverter abonneConverter ;
+    @Autowired
+    private StoreConverter storeConverter ;
+    @Autowired
+    private MagasinConverter magasinConverter ;
     private boolean abonne;
+    private boolean stores;
 
     public  SocieteConverter(){
         super(Societe.class, SocieteDto.class, SocieteHistory.class);
+        init(true);
     }
 
     @Override
@@ -43,6 +50,8 @@ public class SocieteConverter extends AbstractConverter<Societe, SocieteDto, Soc
             }
 
 
+            if(this.stores && ListUtil.isNotEmpty(dto.getStores()))
+                item.setStores(storeConverter.toItem(dto.getStores()));
 
         return item;
         }
@@ -64,12 +73,22 @@ public class SocieteConverter extends AbstractConverter<Societe, SocieteDto, Soc
         if(this.abonne && item.getAbonne()!=null) {
             dto.setAbonne(abonneConverter.toDto(item.getAbonne())) ;
         }
+        if(this.stores && ListUtil.isNotEmpty(item.getStores())){
+            storeConverter.init(true);
+            storeConverter.setSociete(false);
+            dto.setStores(storeConverter.toDto(item.getStores()));
+            storeConverter.setSociete(true);
+
+        }
 
 
         return dto;
         }
     }
 
+    public void initList(boolean value) {
+        this.stores = value;
+    }
 
     public void initObject(boolean value) {
         this.abonne = value;
@@ -82,10 +101,28 @@ public class SocieteConverter extends AbstractConverter<Societe, SocieteDto, Soc
     public void setAbonneConverter(AbonneConverter abonneConverter ){
         this.abonneConverter = abonneConverter;
     }
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
+    }
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
+    }
+    public MagasinConverter getMagasinConverter(){
+        return this.magasinConverter;
+    }
+    public void setMagasinConverter(MagasinConverter magasinConverter ){
+        this.magasinConverter = magasinConverter;
+    }
     public boolean  isAbonne(){
         return this.abonne;
     }
     public void  setAbonne(boolean abonne){
         this.abonne = abonne;
+    }
+    public boolean  isStores(){
+        return this.stores ;
+    }
+    public void  setStores(boolean stores ){
+        this.stores  = stores ;
     }
 }

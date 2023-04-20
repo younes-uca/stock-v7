@@ -15,10 +15,10 @@ import {PaiementCommandeDto} from 'src/app/controller/model/PaiementCommande.mod
 import {PaiementCommandeCriteria} from 'src/app/controller/criteria/PaiementCommandeCriteria.model';
 
 
-import {CommandeDto} from 'src/app/controller/model/Commande.model';
-import {CommandeService} from 'src/app/controller/service/Commande.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
+import {CommandeDto} from 'src/app/controller/model/Commande.model';
+import {CommandeService} from 'src/app/controller/service/Commande.service';
 
 @Component({
   selector: 'app-paiement-commande-edit-admin',
@@ -38,7 +38,7 @@ export class PaiementCommandeEditAdminComponent extends AbstractEditController<P
     constructor(private datePipe: DatePipe, private paiementCommandeService: PaiementCommandeService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private commandeService: CommandeService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private commandeService: CommandeService
     ) {
         super(datePipe, paiementCommandeService, messageService, confirmationService, roleService, router, stringUtilService);
     }

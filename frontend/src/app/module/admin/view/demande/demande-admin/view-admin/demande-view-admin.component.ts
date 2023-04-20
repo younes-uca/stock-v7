@@ -13,24 +13,24 @@ import {DemandeService} from 'src/app/controller/service/Demande.service';
 import {DemandeDto} from 'src/app/controller/model/Demande.model';
 import {DemandeCriteria} from 'src/app/controller/criteria/DemandeCriteria.model';
 
-import {StoreDto} from 'src/app/controller/model/Store.model';
-import {StoreService} from 'src/app/controller/service/Store.service';
+import {DemandeItemDto} from 'src/app/controller/model/DemandeItem.model';
+import {DemandeItemService} from 'src/app/controller/service/DemandeItem.service';
 import {EtatDemandeDto} from 'src/app/controller/model/EtatDemande.model';
 import {EtatDemandeService} from 'src/app/controller/service/EtatDemande.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {ClientDto} from 'src/app/controller/model/Client.model';
 import {ClientService} from 'src/app/controller/service/Client.service';
 import {LivraisonDto} from 'src/app/controller/model/Livraison.model';
 import {LivraisonService} from 'src/app/controller/service/Livraison.service';
-import {DemandeItemDto} from 'src/app/controller/model/DemandeItem.model';
-import {DemandeItemService} from 'src/app/controller/service/DemandeItem.service';
+import {MagasinDto} from 'src/app/controller/model/Magasin.model';
+import {MagasinService} from 'src/app/controller/service/Magasin.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
 import {PaiementDemandeDto} from 'src/app/controller/model/PaiementDemande.model';
 import {PaiementDemandeService} from 'src/app/controller/service/PaiementDemande.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
-import {MagasinDto} from 'src/app/controller/model/Magasin.model';
-import {MagasinService} from 'src/app/controller/service/Magasin.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
 @Component({
   selector: 'app-demande-view-admin',
   templateUrl: './demande-view-admin.component.html'
@@ -45,7 +45,7 @@ export class DemandeViewAdminComponent extends AbstractViewController<DemandeDto
     constructor(private datePipe: DatePipe, private demandeService: DemandeService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private storeService: StoreService, private etatDemandeService: EtatDemandeService, private clientService: ClientService, private livraisonService: LivraisonService, private paiementDemandeService: PaiementDemandeService, private produitService: ProduitService, private magasinService: MagasinService, private demandeItemService: DemandeItemService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private demandeItemService: DemandeItemService, private etatDemandeService: EtatDemandeService, private produitService: ProduitService, private clientService: ClientService, private livraisonService: LivraisonService, private paiementDemandeService: PaiementDemandeService, private storeService: StoreService, private magasinService: MagasinService
     ){
         super(datePipe, demandeService, messageService, roleService, router, stringUtilService);
     }

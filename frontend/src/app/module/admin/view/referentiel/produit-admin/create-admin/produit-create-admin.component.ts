@@ -13,16 +13,16 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {ProduitDto} from 'src/app/controller/model/Produit.model';
 import {ProduitCriteria} from 'src/app/controller/criteria/ProduitCriteria.model';
-import {StoreDto} from 'src/app/controller/model/Store.model';
-import {StoreService} from 'src/app/controller/service/Store.service';
-import {UniteMesureDto} from 'src/app/controller/model/UniteMesure.model';
-import {UniteMesureService} from 'src/app/controller/service/UniteMesure.service';
-import {MarqueDto} from 'src/app/controller/model/Marque.model';
-import {MarqueService} from 'src/app/controller/service/Marque.service';
-import {CategorieProduitDto} from 'src/app/controller/model/CategorieProduit.model';
-import {CategorieProduitService} from 'src/app/controller/service/CategorieProduit.service';
 import {StockProduitDto} from 'src/app/controller/model/StockProduit.model';
 import {StockProduitService} from 'src/app/controller/service/StockProduit.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
+import {CategorieProduitDto} from 'src/app/controller/model/CategorieProduit.model';
+import {CategorieProduitService} from 'src/app/controller/service/CategorieProduit.service';
+import {MarqueDto} from 'src/app/controller/model/Marque.model';
+import {MarqueService} from 'src/app/controller/service/Marque.service';
+import {UniteMesureDto} from 'src/app/controller/model/UniteMesure.model';
+import {UniteMesureService} from 'src/app/controller/service/UniteMesure.service';
 import {MagasinDto} from 'src/app/controller/model/Magasin.model';
 import {MagasinService} from 'src/app/controller/service/Magasin.service';
 @Component({
@@ -48,7 +48,7 @@ export class ProduitCreateAdminComponent extends AbstractCreateController<Produi
     constructor(private datePipe: DatePipe, private produitService: ProduitService
      , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
     , private confirmationService: ConfirmationService, private router: Router  
-, private storeService: StoreService, private uniteMesureService: UniteMesureService, private marqueService: MarqueService, private categorieProduitService: CategorieProduitService, private stockProduitService: StockProduitService, private magasinService: MagasinService
+, private stockProduitService: StockProduitService, private storeService: StoreService, private categorieProduitService: CategorieProduitService, private marqueService: MarqueService, private uniteMesureService: UniteMesureService, private magasinService: MagasinService
     ) {
         super(datePipe, produitService, messageService, confirmationService, roleService, router, stringUtilService);
     }

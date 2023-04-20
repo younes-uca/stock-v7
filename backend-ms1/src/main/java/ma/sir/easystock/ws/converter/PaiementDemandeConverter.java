@@ -16,9 +16,9 @@ import ma.sir.easystock.ws.dto.PaiementDemandeDto;
 public class PaiementDemandeConverter extends AbstractConverter<PaiementDemande, PaiementDemandeDto, PaiementDemandeHistory> {
 
     @Autowired
-    private DemandeConverter demandeConverter ;
-    @Autowired
     private ModePaiementConverter modePaiementConverter ;
+    @Autowired
+    private DemandeConverter demandeConverter ;
     private boolean demande;
     private boolean modePaiement;
 
@@ -91,17 +91,17 @@ public class PaiementDemandeConverter extends AbstractConverter<PaiementDemande,
     }
 
 
-    public DemandeConverter getDemandeConverter(){
-        return this.demandeConverter;
-    }
-    public void setDemandeConverter(DemandeConverter demandeConverter ){
-        this.demandeConverter = demandeConverter;
-    }
     public ModePaiementConverter getModePaiementConverter(){
         return this.modePaiementConverter;
     }
     public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
         this.modePaiementConverter = modePaiementConverter;
+    }
+    public DemandeConverter getDemandeConverter(){
+        return this.demandeConverter;
+    }
+    public void setDemandeConverter(DemandeConverter demandeConverter ){
+        this.demandeConverter = demandeConverter;
     }
     public boolean  isDemande(){
         return this.demande;

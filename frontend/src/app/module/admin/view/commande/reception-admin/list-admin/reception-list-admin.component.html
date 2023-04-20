@@ -23,6 +23,21 @@
                                         [showClear]="true"  placeholder="{{'Commande' | translate}}" optionLabel="reference">
                             </p-dropdown>
                         </span>
+
+                        <span class=" p-float-label mr-3 align-search-items mt-4">
+                            <p-calendar class="mr-2" [(ngModel)]="criteria.dateReceptionFrom"
+                                    id="2-1"
+                                    dateFormat="dd-MM-yy"></p-calendar>
+                            <label for="2-1">{{'Date reception' | translate}} Min</label>
+                        </span>
+
+                         <span class=" p-float-label mr-3 align-search-items mt-4">
+                            <p-calendar class="mr-2" [(ngModel)]="criteria.dateReceptionTo"
+                                    id="2-2"
+                                    dateFormat="dd-MM-yy"></p-calendar>
+                            <label for="2-2">{{'Date reception' | translate}} Max</label>
+                        </span>
+
                         <span class=" p-float-label mr-3 align-search-items mt-4">
                             <input class="mr-2" pInputText id="3" type="text"  [(ngModel)]="criteria.descriptionLike">
                             <label for="3">{{'Description' | translate}}</label>
@@ -95,7 +110,7 @@
                         <td>{{element.commande?.reference}}</td>
                             
                             
-                        <td>{{element.dateReception}}</td>
+                        <td>{{element.dateReception | date :'dd/MM/yyyy HH:mm' }}</td>
                             
                             
                         <td>{{element.etatReception?.libelle}}</td>

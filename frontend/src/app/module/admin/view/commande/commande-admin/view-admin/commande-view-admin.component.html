@@ -49,7 +49,7 @@
                                 </ng-template>
                                 <ng-template pTemplate="body" let-p>
                                     <tr>
-                                        <td>{{p.dateReception}}</td>
+                                        <td>{{p.dateReception | date: dateFormatColumn}}</td>
                                         <td>{{p.description}}</td>
                                         <td>{{p.etatReception?.libelle}}</td>
                                     </tr>

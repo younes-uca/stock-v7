@@ -16,12 +16,9 @@ import ma.sir.easystock.ws.dto.AbonneDto;
 public class AbonneConverter extends AbstractConverter<Abonne, AbonneDto, AbonneHistory> {
 
     @Autowired
-    private StoreConverter storeConverter ;
-    @Autowired
     private SocieteConverter societeConverter ;
     @Autowired
-    private MagasinConverter magasinConverter ;
-    private boolean stores;
+    private StoreConverter storeConverter ;
     private boolean societes;
 
     public  AbonneConverter(){
@@ -70,8 +67,6 @@ public class AbonneConverter extends AbstractConverter<Abonne, AbonneDto, Abonne
             if(StringUtil.isNotEmpty(dto.getIce()))
                 item.setIce(dto.getIce());
 
-            if(this.stores && ListUtil.isNotEmpty(dto.getStores()))
-                item.setStores(storeConverter.toItem(dto.getStores()));
             if(this.societes && ListUtil.isNotEmpty(dto.getSocietes()))
                 item.setSocietes(societeConverter.toItem(dto.getSocietes()));
 
@@ -118,13 +113,6 @@ public class AbonneConverter extends AbstractConverter<Abonne, AbonneDto, Abonne
                 dto.setIfisc(item.getIfisc());
             if(StringUtil.isNotEmpty(item.getIce()))
                 dto.setIce(item.getIce());
-        if(this.stores && ListUtil.isNotEmpty(item.getStores())){
-            storeConverter.init(true);
-            storeConverter.setAbonne(false);
-            dto.setStores(storeConverter.toDto(item.getStores()));
-            storeConverter.setAbonne(true);
-
-        }
         if(this.societes && ListUtil.isNotEmpty(item.getSocietes())){
             societeConverter.init(true);
             societeConverter.setAbonne(false);
@@ -139,7 +127,6 @@ public class AbonneConverter extends AbstractConverter<Abonne, AbonneDto, Abonne
     }
 
     public void initList(boolean value) {
-        this.stores = value;
         this.societes = value;
     }
 
@@ -147,29 +134,17 @@ public class AbonneConverter extends AbstractConverter<Abonne, AbonneDto, Abonne
     }
 
 
-    public StoreConverter getStoreConverter(){
-        return this.storeConverter;
-    }
-    public void setStoreConverter(StoreConverter storeConverter ){
-        this.storeConverter = storeConverter;
-    }
     public SocieteConverter getSocieteConverter(){
         return this.societeConverter;
     }
     public void setSocieteConverter(SocieteConverter societeConverter ){
         this.societeConverter = societeConverter;
     }
-    public MagasinConverter getMagasinConverter(){
-        return this.magasinConverter;
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
     }
-    public void setMagasinConverter(MagasinConverter magasinConverter ){
-        this.magasinConverter = magasinConverter;
-    }
-    public boolean  isStores(){
-        return this.stores ;
-    }
-    public void  setStores(boolean stores ){
-        this.stores  = stores ;
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
     }
     public boolean  isSocietes(){
         return this.societes ;

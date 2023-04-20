@@ -16,7 +16,7 @@ public class ReceptionSpecification extends  AbstractSpecification<ReceptionCrit
     @Override
     public void constructPredicates() {
         addPredicateId("id", criteria);
-        addPredicate("dateReception", criteria.getDateReception(),criteria.getDateReceptionLike());
+        addPredicate("dateReception", criteria.getDateReception(), criteria.getDateReceptionFrom(), criteria.getDateReceptionTo());
         addPredicateFk("commande","id", criteria.getCommande()==null?null:criteria.getCommande().getId());
         addPredicateFk("commande","reference", criteria.getCommande()==null?null:criteria.getCommande().getReference());
         addPredicateFk("etatReception","id", criteria.getEtatReception()==null?null:criteria.getEtatReception().getId());

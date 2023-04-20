@@ -5,12 +5,16 @@ import ma.sir.easystock.zynerator.dto.AuditBaseDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReceptionDto  extends AuditBaseDto {
 
-    private LocaleDateTime dateReception  ;
+    private String dateReception ;
     private String description  ;
 
     private CommandeDto commande ;
@@ -26,10 +30,11 @@ public class ReceptionDto  extends AuditBaseDto {
 
 
     @Log
-    public LocaleDateTime getDateReception(){
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
+    public String getDateReception(){
         return this.dateReception;
     }
-    public void setDateReception(LocaleDateTime dateReception){
+    public void setDateReception(String dateReception){
         this.dateReception = dateReception;
     }
 

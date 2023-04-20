@@ -7,6 +7,9 @@ import {BaseCriteria} from 'src/app/zynerator/criteria/BaseCriteria.model';
 export class ReceptionCriteria  extends   BaseCriteria  {
 
     public id: number;
+    public dateReception: Date;
+    public dateReceptionFrom: Date;
+    public dateReceptionTo: Date;
     public description: string;
     public descriptionLike: string;
   public commande: CommandeCriteria ;

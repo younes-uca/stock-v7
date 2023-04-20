@@ -22,6 +22,21 @@
                             <input class="mr-2" pInputText id="1" type="text"  [(ngModel)]="criteria.referenceLike">
                             <label for="1">{{'Reference' | translate}}</label>
                         </span>
+
+                        <span class=" p-float-label mr-3 align-search-items mt-4">
+                            <p-calendar class="mr-2" [(ngModel)]="criteria.dateDevisFrom"
+                                    id="2-1"
+                                    dateFormat="dd-MM-yy"></p-calendar>
+                            <label for="2-1">{{'Date devis' | translate}} Min</label>
+                        </span>
+
+                         <span class=" p-float-label mr-3 align-search-items mt-4">
+                            <p-calendar class="mr-2" [(ngModel)]="criteria.dateDevisTo"
+                                    id="2-2"
+                                    dateFormat="dd-MM-yy"></p-calendar>
+                            <label for="2-2">{{'Date devis' | translate}} Max</label>
+                        </span>
+
                         <span class=" p-float-label mr-3 align-search-items mt-4">
                             <p-inputNumber class="mr-2" mode="decimal" [(ngModel)]="criteria.totalMin" id="3-1"></p-inputNumber>
                             <label for="3-1">{{'Total' | translate}} Min</label>
@@ -111,7 +126,7 @@
                         <td>{{element.reference}}</td>
                             
                             
-                        <td>{{element.dateDevis}}</td>
+                        <td>{{element.dateDevis | date :'dd/MM/yyyy HH:mm' }}</td>
                             
                             
                         <td>{{element.total}}</td>

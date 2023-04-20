@@ -17,9 +17,9 @@ import ma.sir.easystock.ws.dto.LivraisonItemDto;
 public class LivraisonItemConverter extends AbstractConverter<LivraisonItem, LivraisonItemDto, LivraisonItemHistory> {
 
     @Autowired
-    private LivraisonConverter livraisonConverter ;
-    @Autowired
     private ProduitConverter produitConverter ;
+    @Autowired
+    private LivraisonConverter livraisonConverter ;
     private boolean produit;
     private boolean livraison;
 
@@ -82,17 +82,17 @@ public class LivraisonItemConverter extends AbstractConverter<LivraisonItem, Liv
     }
 
 
-    public LivraisonConverter getLivraisonConverter(){
-        return this.livraisonConverter;
-    }
-    public void setLivraisonConverter(LivraisonConverter livraisonConverter ){
-        this.livraisonConverter = livraisonConverter;
-    }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
     }
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
+    }
+    public LivraisonConverter getLivraisonConverter(){
+        return this.livraisonConverter;
+    }
+    public void setLivraisonConverter(LivraisonConverter livraisonConverter ){
+        this.livraisonConverter = livraisonConverter;
     }
     public boolean  isProduit(){
         return this.produit;

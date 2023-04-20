@@ -16,11 +16,11 @@ import ma.sir.easystock.ws.dto.DevisFournisseurDto;
 public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseur, DevisFournisseurDto, DevisFournisseurHistory> {
 
     @Autowired
-    private FournisseurConverter fournisseurConverter ;
+    private DevisItemFournisseurConverter devisItemFournisseurConverter ;
     @Autowired
     private ProduitConverter produitConverter ;
     @Autowired
-    private DevisItemFournisseurConverter devisItemFournisseurConverter ;
+    private FournisseurConverter fournisseurConverter ;
     private boolean fournisseur;
     private boolean devisItemFournisseurs;
 
@@ -40,7 +40,7 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
             if(StringUtil.isNotEmpty(dto.getReference()))
                 item.setReference(dto.getReference());
             if(StringUtil.isNotEmpty(dto.getDateDevis()))
-                item.setDateDevis(dto.getDateDevis());
+                item.setDateDevis(DateUtil.stringEnToDate(dto.getDateDevis()));
             if(StringUtil.isNotEmpty(dto.getTotal()))
                 item.setTotal(dto.getTotal());
             if(StringUtil.isNotEmpty(dto.getDescription()))
@@ -66,8 +66,8 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
                 dto.setId(item.getId());
             if(StringUtil.isNotEmpty(item.getReference()))
                 dto.setReference(item.getReference());
-            if(StringUtil.isNotEmpty(item.getDateDevis()))
-                dto.setDateDevis(item.getDateDevis());
+            if(item.getDateDevis()!=null)
+                dto.setDateDevis(DateUtil.dateTimeToString(item.getDateDevis()));
             if(StringUtil.isNotEmpty(item.getTotal()))
                 dto.setTotal(item.getTotal());
             if(StringUtil.isNotEmpty(item.getDescription()))
@@ -97,11 +97,11 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
     }
 
 
-    public FournisseurConverter getFournisseurConverter(){
-        return this.fournisseurConverter;
+    public DevisItemFournisseurConverter getDevisItemFournisseurConverter(){
+        return this.devisItemFournisseurConverter;
     }
-    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
-        this.fournisseurConverter = fournisseurConverter;
+    public void setDevisItemFournisseurConverter(DevisItemFournisseurConverter devisItemFournisseurConverter ){
+        this.devisItemFournisseurConverter = devisItemFournisseurConverter;
     }
     public ProduitConverter getProduitConverter(){
         return this.produitConverter;
@@ -109,11 +109,11 @@ public class DevisFournisseurConverter extends AbstractConverter<DevisFournisseu
     public void setProduitConverter(ProduitConverter produitConverter ){
         this.produitConverter = produitConverter;
     }
-    public DevisItemFournisseurConverter getDevisItemFournisseurConverter(){
-        return this.devisItemFournisseurConverter;
+    public FournisseurConverter getFournisseurConverter(){
+        return this.fournisseurConverter;
     }
-    public void setDevisItemFournisseurConverter(DevisItemFournisseurConverter devisItemFournisseurConverter ){
-        this.devisItemFournisseurConverter = devisItemFournisseurConverter;
+    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
+        this.fournisseurConverter = fournisseurConverter;
     }
     public boolean  isFournisseur(){
         return this.fournisseur;

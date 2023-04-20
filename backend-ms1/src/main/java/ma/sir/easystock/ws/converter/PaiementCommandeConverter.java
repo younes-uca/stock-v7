@@ -16,9 +16,9 @@ import ma.sir.easystock.ws.dto.PaiementCommandeDto;
 public class PaiementCommandeConverter extends AbstractConverter<PaiementCommande, PaiementCommandeDto, PaiementCommandeHistory> {
 
     @Autowired
-    private CommandeConverter commandeConverter ;
-    @Autowired
     private ModePaiementConverter modePaiementConverter ;
+    @Autowired
+    private CommandeConverter commandeConverter ;
     private boolean commande;
     private boolean modePaiement;
 
@@ -91,17 +91,17 @@ public class PaiementCommandeConverter extends AbstractConverter<PaiementCommand
     }
 
 
-    public CommandeConverter getCommandeConverter(){
-        return this.commandeConverter;
-    }
-    public void setCommandeConverter(CommandeConverter commandeConverter ){
-        this.commandeConverter = commandeConverter;
-    }
     public ModePaiementConverter getModePaiementConverter(){
         return this.modePaiementConverter;
     }
     public void setModePaiementConverter(ModePaiementConverter modePaiementConverter ){
         this.modePaiementConverter = modePaiementConverter;
+    }
+    public CommandeConverter getCommandeConverter(){
+        return this.commandeConverter;
+    }
+    public void setCommandeConverter(CommandeConverter commandeConverter ){
+        this.commandeConverter = commandeConverter;
     }
     public boolean  isCommande(){
         return this.commande;

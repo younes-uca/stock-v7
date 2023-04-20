@@ -21,10 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
 import ma.sir.easystock.bean.core.Reception;
 import ma.sir.easystock.bean.core.CommandeItem;
 
-import ma.sir.easystock.service.facade.admin.StoreAdminService ;
-import ma.sir.easystock.service.facade.admin.ClientAdminService ;
-import ma.sir.easystock.service.facade.admin.ReceptionAdminService ;
 import ma.sir.easystock.service.facade.admin.EtatCommandeAdminService ;
+import ma.sir.easystock.service.facade.admin.ClientAdminService ;
+import ma.sir.easystock.service.facade.admin.StoreAdminService ;
+import ma.sir.easystock.service.facade.admin.ReceptionAdminService ;
 
 
 import java.util.List;
@@ -106,13 +106,13 @@ CommandeHistoryDao> implements CommandeAdminService {
     }
 
     @Autowired
-    private StoreAdminService storeService ;
+    private EtatCommandeAdminService etatCommandeService ;
     @Autowired
     private ClientAdminService clientService ;
     @Autowired
-    private ReceptionAdminService receptionService ;
+    private StoreAdminService storeService ;
     @Autowired
-    private EtatCommandeAdminService etatCommandeService ;
+    private ReceptionAdminService receptionService ;
     public CommandeAdminServiceImpl(CommandeDao dao, CommandeHistoryDao historyDao) {
         super(dao, historyDao);
     }

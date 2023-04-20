@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.easystock.service.facade.admin.CompteComptableAdminService ;
 import ma.sir.easystock.service.facade.admin.SocieteAdminService ;
+import ma.sir.easystock.service.facade.admin.CompteComptableAdminService ;
 
 
 import java.util.List;
@@ -46,9 +46,9 @@ OperationComptableHistoryDao> implements OperationComptableAdminService {
     }
 
     @Autowired
-    private CompteComptableAdminService compteComptableService ;
-    @Autowired
     private SocieteAdminService societeService ;
+    @Autowired
+    private CompteComptableAdminService compteComptableService ;
     public OperationComptableAdminServiceImpl(OperationComptableDao dao, OperationComptableHistoryDao historyDao) {
         super(dao, historyDao);
     }

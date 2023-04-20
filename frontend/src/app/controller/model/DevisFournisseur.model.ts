@@ -7,6 +7,7 @@ export class DevisFournisseurDto  extends BaseDto{
 
     public id: number;
     public reference: string;
+   public dateDevis: Date;
     public total: number;
     public description: string;
     public dateDevisMax: string ;

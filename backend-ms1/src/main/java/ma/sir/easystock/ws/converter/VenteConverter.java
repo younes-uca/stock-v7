@@ -17,17 +17,17 @@ import ma.sir.easystock.ws.dto.VenteDto;
 public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHistory> {
 
     @Autowired
-    private StoreConverter storeConverter ;
+    private VenteItemConverter venteItemConverter ;
     @Autowired
     private ClientConverter clientConverter ;
     @Autowired
-    private VenteItemConverter venteItemConverter ;
+    private ProduitConverter produitConverter ;
     @Autowired
     private ModePaiementConverter modePaiementConverter ;
     @Autowired
     private PaiementVenteConverter paiementVenteConverter ;
     @Autowired
-    private ProduitConverter produitConverter ;
+    private StoreConverter storeConverter ;
     private boolean store;
     private boolean client;
     private boolean paiementVentes;
@@ -129,11 +129,11 @@ public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHist
     }
 
 
-    public StoreConverter getStoreConverter(){
-        return this.storeConverter;
+    public VenteItemConverter getVenteItemConverter(){
+        return this.venteItemConverter;
     }
-    public void setStoreConverter(StoreConverter storeConverter ){
-        this.storeConverter = storeConverter;
+    public void setVenteItemConverter(VenteItemConverter venteItemConverter ){
+        this.venteItemConverter = venteItemConverter;
     }
     public ClientConverter getClientConverter(){
         return this.clientConverter;
@@ -141,11 +141,11 @@ public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHist
     public void setClientConverter(ClientConverter clientConverter ){
         this.clientConverter = clientConverter;
     }
-    public VenteItemConverter getVenteItemConverter(){
-        return this.venteItemConverter;
+    public ProduitConverter getProduitConverter(){
+        return this.produitConverter;
     }
-    public void setVenteItemConverter(VenteItemConverter venteItemConverter ){
-        this.venteItemConverter = venteItemConverter;
+    public void setProduitConverter(ProduitConverter produitConverter ){
+        this.produitConverter = produitConverter;
     }
     public ModePaiementConverter getModePaiementConverter(){
         return this.modePaiementConverter;
@@ -159,11 +159,11 @@ public class VenteConverter extends AbstractConverter<Vente, VenteDto, VenteHist
     public void setPaiementVenteConverter(PaiementVenteConverter paiementVenteConverter ){
         this.paiementVenteConverter = paiementVenteConverter;
     }
-    public ProduitConverter getProduitConverter(){
-        return this.produitConverter;
+    public StoreConverter getStoreConverter(){
+        return this.storeConverter;
     }
-    public void setProduitConverter(ProduitConverter produitConverter ){
-        this.produitConverter = produitConverter;
+    public void setStoreConverter(StoreConverter storeConverter ){
+        this.storeConverter = storeConverter;
     }
     public boolean  isStore(){
         return this.store;

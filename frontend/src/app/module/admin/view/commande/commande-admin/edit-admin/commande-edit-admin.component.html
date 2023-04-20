@@ -74,7 +74,8 @@
                                         <div class="grid">
                                                             <div class="field col-12 md:col-4">
                                                                 <label for="2">Date reception</label>
-                                                                <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="dateReception" [(ngModel)]="receptionsElement.dateReception" placeholder="Date reception"  ></p-inputNumber>
+                                                                <p-calendar  appendTo="body" id="2" placeholder="Date reception"  [showTime]="true" [showSeconds]="false"
+                                                                        [(ngModel)]="receptionsElement.dateReception" dateFormat="{{dateFormat}}" [showIcon]="true"  ></p-calendar>
                                                                 
                                                             </div>
                                                             <div class="field col-12 md:col-4">
@@ -114,7 +115,7 @@
                                                     </ng-template>
                                                     <ng-template pTemplate="body" let-p>
                                                         <tr>
-                                                                        <td>{{p.dateReception}}</td>
+                                                                        <td>{{p.dateReception | date: dateFormatColumn}}</td>
                                                                         <td>{{p.description}}</td>
                                                                     <td>{{p.etatReception?.libelle}}</td>
                                                             <td>

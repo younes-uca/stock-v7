@@ -13,18 +13,18 @@ import {VenteService} from 'src/app/controller/service/Vente.service';
 import {VenteDto} from 'src/app/controller/model/Vente.model';
 import {VenteCriteria} from 'src/app/controller/criteria/VenteCriteria.model';
 
-import {StoreDto} from 'src/app/controller/model/Store.model';
-import {StoreService} from 'src/app/controller/service/Store.service';
-import {ClientDto} from 'src/app/controller/model/Client.model';
-import {ClientService} from 'src/app/controller/service/Client.service';
 import {VenteItemDto} from 'src/app/controller/model/VenteItem.model';
 import {VenteItemService} from 'src/app/controller/service/VenteItem.service';
+import {ClientDto} from 'src/app/controller/model/Client.model';
+import {ClientService} from 'src/app/controller/service/Client.service';
+import {ProduitDto} from 'src/app/controller/model/Produit.model';
+import {ProduitService} from 'src/app/controller/service/Produit.service';
 import {ModePaiementDto} from 'src/app/controller/model/ModePaiement.model';
 import {ModePaiementService} from 'src/app/controller/service/ModePaiement.service';
 import {PaiementVenteDto} from 'src/app/controller/model/PaiementVente.model';
 import {PaiementVenteService} from 'src/app/controller/service/PaiementVente.service';
-import {ProduitDto} from 'src/app/controller/model/Produit.model';
-import {ProduitService} from 'src/app/controller/service/Produit.service';
+import {StoreDto} from 'src/app/controller/model/Store.model';
+import {StoreService} from 'src/app/controller/service/Store.service';
 @Component({
   selector: 'app-vente-view-admin',
   templateUrl: './vente-view-admin.component.html'
@@ -39,7 +39,7 @@ export class VenteViewAdminComponent extends AbstractViewController<VenteDto, Ve
     constructor(private datePipe: DatePipe, private venteService: VenteService
                 , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
                 , private router: Router  
-, private storeService: StoreService, private paiementVenteService: PaiementVenteService, private clientService: ClientService, private venteItemService: VenteItemService, private produitService: ProduitService, private modePaiementService: ModePaiementService
+, private modePaiementService: ModePaiementService, private venteItemService: VenteItemService, private paiementVenteService: PaiementVenteService, private clientService: ClientService, private produitService: ProduitService, private storeService: StoreService
     ){
         super(datePipe, venteService, messageService, roleService, router, stringUtilService);
     }

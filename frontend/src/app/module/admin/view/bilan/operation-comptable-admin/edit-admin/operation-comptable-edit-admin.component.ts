@@ -15,10 +15,10 @@ import {OperationComptableDto} from 'src/app/controller/model/OperationComptable
 import {OperationComptableCriteria} from 'src/app/controller/criteria/OperationComptableCriteria.model';
 
 
-import {CompteComptableDto} from 'src/app/controller/model/CompteComptable.model';
-import {CompteComptableService} from 'src/app/controller/service/CompteComptable.service';
 import {SocieteDto} from 'src/app/controller/model/Societe.model';
 import {SocieteService} from 'src/app/controller/service/Societe.service';
+import {CompteComptableDto} from 'src/app/controller/model/CompteComptable.model';
+import {CompteComptableService} from 'src/app/controller/service/CompteComptable.service';
 
 @Component({
   selector: 'app-operation-comptable-edit-admin',
@@ -37,7 +37,7 @@ export class OperationComptableEditAdminComponent extends AbstractEditController
     constructor(private datePipe: DatePipe, private operationComptableService: OperationComptableService
         , private stringUtilService: StringUtilService, private roleService: RoleService,  private messageService: MessageService
         , private confirmationService: ConfirmationService, private router: Router  
-, private compteComptableService: CompteComptableService, private societeService: SocieteService
+, private societeService: SocieteService, private compteComptableService: CompteComptableService
     ) {
         super(datePipe, operationComptableService, messageService, confirmationService, roleService, router, stringUtilService);
     }

@@ -75,30 +75,6 @@
                 </div>
             </p-tabPanel>
 
-            <p-tabPanel header="{{'Stores' | translate}}">
-                <div class="grid">
-                    <div class="col">
-                        <div class="card">
-                            <p-table [value]="item.stores" [scrollable]="true" scrollHeight="200px">
-                                <ng-template pTemplate="header">
-                                    <tr>
-                                        <th>Libelle</th>
-                                        <th>Reference</th>
-                                        <th>Societe</th>
-                                    </tr>
-                                </ng-template>
-                                <ng-template pTemplate="body" let-p>
-                                    <tr>
-                                        <td>{{p.libelle}}</td>
-                                        <td>{{p.reference}}</td>
-                                        <td>{{p.societe?.ice}}</td>
-                                    </tr>
-                                </ng-template>
-                            </p-table>
-                        </div>
-                    </div>
-                </div>
-            </p-tabPanel>
             <p-tabPanel header="{{'Societes' | translate}}">
                 <div class="grid">
                     <div class="col">

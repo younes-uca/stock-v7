@@ -3,6 +3,7 @@ package  ma.sir.easystock.ws.converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import ma.sir.easystock.bean.core.Societe;
 
 import ma.sir.easystock.zynerator.util.StringUtil;
 import ma.sir.easystock.zynerator.converter.AbstractConverter;
@@ -15,9 +16,9 @@ import ma.sir.easystock.ws.dto.OperationComptableDto;
 public class OperationComptableConverter extends AbstractConverter<OperationComptable, OperationComptableDto, OperationComptableHistory> {
 
     @Autowired
-    private CompteComptableConverter compteComptableConverter ;
-    @Autowired
     private SocieteConverter societeConverter ;
+    @Autowired
+    private CompteComptableConverter compteComptableConverter ;
     private boolean societe;
     private boolean compteComptable;
 
@@ -37,8 +38,10 @@ public class OperationComptableConverter extends AbstractConverter<OperationComp
                 item.setDateOperationComptable(DateUtil.stringEnToDate(dto.getDateOperationComptable()));
             if(StringUtil.isNotEmpty(dto.getMontant()))
                 item.setMontant(dto.getMontant());
-            if(this.societe && dto.getSociete()!=null)
-                item.setSociete(societeConverter.toItem(dto.getSociete())) ;
+            if(dto.getSociete() != null && dto.getSociete().getId() != null){
+                item.setSociete(new Societe());
+                item.getSociete().setId(dto.getSociete().getId());
+            }
 
             if(this.compteComptable && dto.getCompteComptable()!=null)
                 item.setCompteComptable(compteComptableConverter.toItem(dto.getCompteComptable())) ;
@@ -80,17 +83,17 @@ public class OperationComptableConverter extends AbstractConverter<OperationComp
     }
 
 
-    public CompteComptableConverter getCompteComptableConverter(){
-        return this.compteComptableConverter;
-    }
-    public void setCompteComptableConverter(CompteComptableConverter compteComptableConverter ){
-        this.compteComptableConverter = compteComptableConverter;
-    }
     public SocieteConverter getSocieteConverter(){
         return this.societeConverter;
     }
     public void setSocieteConverter(SocieteConverter societeConverter ){
         this.societeConverter = societeConverter;
+    }
+    public CompteComptableConverter getCompteComptableConverter(){
+        return this.compteComptableConverter;
+    }
+    public void setCompteComptableConverter(CompteComptableConverter compteComptableConverter ){
+        this.compteComptableConverter = compteComptableConverter;
     }
     public boolean  isSociete(){
         return this.societe;

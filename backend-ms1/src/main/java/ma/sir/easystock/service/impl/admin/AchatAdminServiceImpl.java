@@ -22,11 +22,11 @@ import ma.sir.easystock.bean.core.PaiementAchat;
 import ma.sir.easystock.bean.core.AchatItem;
 import ma.sir.easystock.bean.core.AvoirAchat;
 
-import ma.sir.easystock.service.facade.admin.StoreAdminService ;
-import ma.sir.easystock.service.facade.admin.FournisseurAdminService ;
+import ma.sir.easystock.service.facade.admin.PaiementAchatAdminService ;
 import ma.sir.easystock.service.facade.admin.AvoirAchatAdminService ;
 import ma.sir.easystock.service.facade.admin.AchatItemAdminService ;
-import ma.sir.easystock.service.facade.admin.PaiementAchatAdminService ;
+import ma.sir.easystock.service.facade.admin.FournisseurAdminService ;
+import ma.sir.easystock.service.facade.admin.StoreAdminService ;
 
 
 import java.util.List;
@@ -114,15 +114,15 @@ AchatHistoryDao> implements AchatAdminService {
     }
 
     @Autowired
-    private StoreAdminService storeService ;
-    @Autowired
-    private FournisseurAdminService fournisseurService ;
+    private PaiementAchatAdminService paiementAchatService ;
     @Autowired
     private AvoirAchatAdminService avoirAchatService ;
     @Autowired
     private AchatItemAdminService achatItemService ;
     @Autowired
-    private PaiementAchatAdminService paiementAchatService ;
+    private FournisseurAdminService fournisseurService ;
+    @Autowired
+    private StoreAdminService storeService ;
     public AchatAdminServiceImpl(AchatDao dao, AchatHistoryDao historyDao) {
         super(dao, historyDao);
     }

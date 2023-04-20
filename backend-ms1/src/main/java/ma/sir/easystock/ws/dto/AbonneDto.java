@@ -32,7 +32,6 @@ public class AbonneDto  extends AuditBaseDto {
     private String ice  ;
 
 
-    private List<StoreDto> stores ;
     private List<SocieteDto> societes ;
 
 
@@ -175,13 +174,6 @@ public class AbonneDto  extends AuditBaseDto {
 
 
 
-    public List<StoreDto> getStores(){
-        return this.stores;
-    }
-
-    public void setStores(List<StoreDto> stores){
-        this.stores = stores;
-    }
     public List<SocieteDto> getSocietes(){
         return this.societes;
     }
