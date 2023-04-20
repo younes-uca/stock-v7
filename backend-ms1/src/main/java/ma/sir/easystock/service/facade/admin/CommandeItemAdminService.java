@@ -16,5 +16,5 @@ public interface CommandeItemAdminService extends  IService<CommandeItem,Command
     int deleteByEtatCommandeId(Long id);
 
 
-
+    CommandeItem findByCommandeIdAndProduitId(Long commandeId, Long produitId);
 }
