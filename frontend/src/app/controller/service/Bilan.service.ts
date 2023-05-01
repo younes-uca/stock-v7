@@ -25,6 +25,13 @@ export class BilanService extends AbstractService<BilanDto, BilanCriteria> {
         this.setApi(environment.apiUrl + 'admin/bilan/');
     }
 
+
+
+    public export(element:BilanDto): Observable<ArrayBuffer>{
+        return this.http.post(this.API +'exportPdf/' ,element, {  responseType:"arraybuffer"});
+    }
+
+
     public constrcutDto(): BilanDto {
         return new BilanDto();
     }

@@ -48,6 +48,12 @@ CommandeItemHistoryDao> implements CommandeItemAdminService {
         return dao.deleteByEtatCommandeId(id);
     }
 
+    @Override
+    public CommandeItem findByCommandeIdAndProduitId(Long commandeId, Long produitId) {
+        return null;
+    }
+
+
     public void configure() {
         super.configure(CommandeItem.class,CommandeItemHistory.class, CommandeItemHistoryCriteria.class, CommandeItemSpecification.class);
     }

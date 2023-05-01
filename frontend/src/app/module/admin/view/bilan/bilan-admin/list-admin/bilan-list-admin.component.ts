@@ -39,6 +39,24 @@ export class BilanListAdminComponent extends AbstractListController<BilanDto, Bi
       this.loadSociete();
     }
 
+
+    public exporte(element:BilanDto): void{
+        this.service.export(element).subscribe((data: ArrayBuffer) => {
+            const blob = new Blob([data], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = "bilan.pdf";
+            link.setAttribute('target', '_blank'); // open link in new tab
+            link.click();
+            window.URL.revokeObjectURL(url);
+        }, (error) => {
+            console.error(error); // handle any errors that occur
+        });
+    }
+
+
+
     public async loadBilans(){
         await this.roleService.findAll();
         const isPermistted = await this.roleService.isPermitted('Bilan', 'list');

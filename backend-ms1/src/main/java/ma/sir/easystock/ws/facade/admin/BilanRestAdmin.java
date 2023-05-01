@@ -8,18 +8,19 @@ import ma.sir.easystock.bean.history.BilanHistory;
 import ma.sir.easystock.dao.criteria.core.BilanCriteria;
 import ma.sir.easystock.dao.criteria.history.BilanHistoryCriteria;
 import ma.sir.easystock.service.facade.admin.BilanAdminService;
+import ma.sir.easystock.util.VelocityPdf;
 import ma.sir.easystock.ws.converter.BilanConverter;
 import ma.sir.easystock.ws.dto.BilanDto;
 import ma.sir.easystock.zynerator.controller.AbstractController;
 import ma.sir.easystock.zynerator.dto.AuditEntityDto;
 import ma.sir.easystock.zynerator.util.PaginatedList;
 import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import ma.sir.easystock.zynerator.process.Result;
 
 import org.springframework.web.multipart.MultipartFile;
 import ma.sir.easystock.zynerator.dto.FileTempDto;
@@ -28,6 +29,7 @@ import ma.sir.easystock.zynerator.dto.FileTempDto;
 @RestController
 @RequestMapping("/api/admin/bilan/")
 public class BilanRestAdmin  extends AbstractController<Bilan, BilanDto, BilanHistory, BilanCriteria, BilanHistoryCriteria, BilanAdminService, BilanConverter> {
+
 
 
 
@@ -46,6 +48,17 @@ public class BilanRestAdmin  extends AbstractController<Bilan, BilanDto, BilanHi
     public ResponseEntity<List<BilanDto>> findAll() throws Exception {
         return super.findAll();
     }
+
+
+
+    @Autowired
+    private VelocityPdf velocityPdf;
+    @ApiOperation("Exporte pdf")
+    @PostMapping("exportPdf/")
+    public  HttpEntity<byte[]> createPdf(@RequestBody BilanDto bilanDto) throws Exception{
+        return  velocityPdf.createPdf("bilan.pdf", "template/bilan.vm", bilanDto);
+    }
+
 
     @ApiOperation("Finds a bilan by id")
     @GetMapping("id/{id}")

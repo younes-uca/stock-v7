@@ -9,18 +9,13 @@ import ma.sir.easystock.dao.facade.history.BilanHistoryDao;
 import ma.sir.easystock.dao.specification.core.BilanSpecification;
 import ma.sir.easystock.service.facade.admin.BilanAdminService;
 import ma.sir.easystock.zynerator.service.AbstractServiceImpl;
-import ma.sir.easystock.zynerator.util.ListUtil;
+
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import ma.sir.easystock.service.facade.admin.SocieteAdminService ;
 
-
-import java.util.List;
 @Service
 public class BilanAdminServiceImpl extends AbstractServiceImpl<Bilan,BilanHistory, BilanCriteria, BilanHistoryCriteria, BilanDao,
 BilanHistoryDao> implements BilanAdminService {
